@@ -1,0 +1,514 @@
+// Спецификация
+@import '_variables.scss';
+
+body {
+    // font-family: "HelveticaNeueCyr", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    background-color: #fff;
+
+}
+
+
+@media (min-width: 360px) {
+    .container {
+        max-width: 1440px;
+    }
+}
+
+.no-padding{
+  padding: 0px;
+  margin: 0px;
+}
+
+.delete_col{
+  @media screen and (max-width: 1200px) {
+  display: none;
+}
+}
+
+.container-fluid{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 0px;
+}
+
+//  Политика конфиденциальности
+
+.header__political {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 450;
+    color: #000;
+    margin-top: 15px;
+    @media screen and (max-width: 1199px) {
+        margin-top: 15px;
+    }
+
+  }
+
+  .political__text__small {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .text_pynkt{
+  font-size: 14px;
+  font-weight: 450;
+  }
+
+  .line_end {
+    border: 0.5px solid #ebebeb;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .header_right_column{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .box_right_column a{
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #39567e;
+  }
+
+  .sider_bar {
+    position: sticky;
+    top: 4rem;
+    z-index: 1000;
+    height: calc(45vh);
+  }
+
+  .left_line_headline {
+    border: 0.5px solid #39567e;
+    margin-top: 35px;
+    width: 95px;
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+
+
+.box_content_include{
+  padding: 45px 0px 45px;
+}
+
+
+// info box
+
+// .bg_info_box{
+//   padding: 15px 0px 15px;
+// background-color: #f7f7f7;
+
+// }
+
+.info_box_text{
+  font-size: 13px;
+ color: #4b5c72;
+  margin-bottom: 0px;
+  text-align: center;
+  @media screen and (max-width: 1199px) {
+    border-right-width: 0px;
+    border-left-width: 0px;
+    margin-top: 15px;
+  }
+}
+
+
+
+
+.naks_link {
+  font-size: 13px;
+  font-weight: 300;
+      text-decoration: underline;
+
+  a {
+      color: #4b5c72;
+      line-height: 1.8;
+  }
+
+}
+
+.naks_link .spks_link{
+  margin-left: 10px;
+      text-decoration: underline;
+}
+
+
+.info_box_standarti {
+  text-align: center;
+  border-right-width: 1px;
+  border-right-style: dashed;
+  border-right-color: #4b5c724f;
+  border-left-width: 1px;
+  border-left-style: dashed;
+  border-left-color: #4b5c724f;
+  @media screen and (max-width: 1199px) {
+    border-right-width: 0px;
+    border-left-width: 0px;
+    margin-top: 15px;
+  }
+  }
+
+.info_box_standarti a{
+text-decoration: none;
+color: #4b5c72;
+text-decoration: underline;
+}
+
+.profstandarti_link{
+  font-size: 18px;
+  color: #4b5c72;
+}
+
+.shifr_headline{
+  font-size: 18px;
+  color: #4b5c72;
+  text-align: center;
+  @media screen and (max-width: 1199px) {
+    border-right-width: 0px;
+    border-left-width: 0px;
+    margin-top: 15px;
+  }
+}
+
+.info_box_text_small{
+  font-size: 13px;
+  color: #4b5c72;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.info_box_feedback{
+  text-align: center;
+  @media screen and (max-width: 1199px) {
+    margin-top: 25px;
+    }
+}
+
+
+
+
+.feedback_button_header a{
+  text-decoration: none;
+  color: #fff;
+  margin-top: 35px;
+}
+
+
+.feedback_header {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #758497;
+  padding: 10px 50px;
+  border-radius: 45px;
+  color: #fff;
+  border: none;
+  &:hover {
+      background-color:  #53667e;
+      transition: 0.2s;
+  }
+}
+
+
+
+// inner page
+
+.bg_header_inner_page{
+  position: relative;
+  background: url(/static_root/img/bg_center.jpg) no-repeat;
+  background-size: cover;
+  padding: 45px 0px 45px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, $neutralLight, $highlight);
+    opacity: .9;
+  }
+}
+
+.headline_bg_inner_page{
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: $primaryDark;
+}
+
+.subtitle_inner_page_text{
+  font-size: 18px;
+  padding: 5px 0px 0px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.back_to_home_page{
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0px;
+  margin-top: 15px;
+  a{
+    padding: 12px 25px;
+    border: 1px solid #fff;
+    text-decoration: none;
+    color: $primary;
+    font-size: 16px;
+    &:hover{
+      background-color: #33465f18;
+      transition: 0.3s;
+    }
+  }
+}
+
+.img_back_to_page{
+  width: 5px;
+  margin-top: -3px;
+  padding: 0px;
+  margin-right: 20px;
+}
+
+
+
+// side panel inner page
+
+.headline_side_panel{
+  font-size: 18px;
+  font-weight: 450;
+  color:#33465f;
+}
+
+.sider_bar_service_pages{
+  padding: 0px 0px 25px;
+}
+
+.line_side_panel{
+  border: 0.5px solid #f1f1f1;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.box_right_column_service{
+  // @media screen and (max-width: 992px) {
+  //     display: none;
+  // }
+}
+
+// page cok
+
+
+// .box_right_column a::before {
+//   content: '';
+//   position: absolute;
+//   width: 45px;
+//   height: 45px;
+//   margin-left: -15px;
+//   margin-top: 7px;
+//   background: url(/static_root/img/arrow_punkt.png) center 0 no-repeat;
+// }
+
+
+  .box_content_in_pages{
+    padding: 65px 0px 65px;
+  }
+
+.headline_cok_text{
+  font-size: 24px;
+  font-weight: 400;
+  color:#33465f;
+}
+
+.ocenka_details_small_text{
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+}
+
+.ocenka_details_medium_text{
+  font-size: 20px;
+  font-weight: 450;
+  color: #000;
+  margin-top: 25px;
+}
+
+.ocenka_details_highlighted_message{
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  color: #000;
+  margin-left: 20px;
+}
+
+.ocenka_details_link_text{
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(0, 102, 255);
+}
+
+.line_ocenka{
+  border: 0.5px solid #b4b4b41f;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.ocenka_link{
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.name{
+  font-size: 16px;
+  font-weight: 450;
+}
+
+.position{
+  font-size: 14px;
+}
+
+.prikrep__doc {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.soglashenie__button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  a {
+      text-decoration: none;
+  }
+}
+
+.soglashenie__button__text {
+background-color: rgb(243, 243, 243);
+  border-radius: 3px;
+  padding: 10px 15px;
+  display: block;
+  font-size: 14px;
+  color: #8d8d8d;
+
+
+  &:hover {
+      color: #585858;
+  }
+}
+
+.download__icon {
+  margin-left: 10px;
+}
+
+.soglashenie__button__text:hover {
+  background-color: #f1f1f12a;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  -webkit-transform: scale(1.01);
+  -moz-transform: scale(1.01);
+  -o-transform: scale(1.01);
+  -moz-cursor: pointer;
+}
+
+// Профстандарты в области сварки
+
+.box__standart {
+  box-shadow: 0 2px 18px rgba(27, 27, 27, 0.03);
+  margin-top: 25px;
+  padding: 35px;
+  border-radius: 3px;
+  border: 1px solid #f3f3f3;
+
+  &:hover {
+      border: 1px solid rgb(199, 223, 255);
+      transition: 0.2s;
+  }
+}
+
+.header__standart {
+  font-size: 16px;
+  font-weight: 350;
+  margin-bottom: 10px;
+}
+
+.name__standart {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.info__standart {
+  font-size: 16px;
+  font-weight: 350;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+.number__standart {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.box__standart__line__two {
+  padding: 70px 0px;
+}
+
+.download__standart {
+  background-color: rgb(206, 206, 206);
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin-top: 10px;
+
+  a {
+      padding: 25px;
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+  }
+
+  &:hover {
+      background-color: rgb(155, 155, 155);
+      transition: 0.2s;
+  }
+}
+
+.right__column__header {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 25px 0px 0px;
+}
+
+.list__service__column {
+  a {
+      text-decoration: none;
+      color: #000;
+
+      &:hover {
+          color: rgb(121, 121, 121);
+      }
+  }
+}
+
+.small__column__text {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.headline_side_panel{
+  font-size: 18px;
+}

@@ -1,0 +1,13 @@
+                {% for post, picture in pictured_posts.items %}
+                    <div class="card news-with-photo border-0 mb-4">
+                        <img class="card-img" src="{{ picture.image.url }}" alt="News photo">
+                        <div class="card-img-overlay d-flex align-items-start">
+                            <span class="font-text-thin text-size-14 text-white text-right mr-3"><strong>{{ post.published_date|date:"d M."}}</strong><br>{{ post.published_date|date:"Y"}}</span>
+                            <span class="font-text-thin text-size-14 text-white">{{ post.category }}</span>
+                        </div>
+                        <div class="card-img-overlay d-flex align-items-end">
+                            <a href="{% url 'details_news' post.pk %}" class="card-text">{{ post.title }}</a>
+                        </div>
+                    </div>
+
+                {% endfor %}

@@ -1,0 +1,57 @@
+@import '_variables.scss';
+.text-size-14 {
+	font-size: 0.875rem;
+}
+
+.news-not-photo {
+    background-color: rgba($neutralLight, 0.5);
+    border-radius: 0.2rem;
+}
+.news-not-photo {
+    font-size: 0.875rem;
+}
+
+.news-not-photo .head-news {
+    font-size: 0.8rem;
+}
+
+.font-text-demi {
+	font-family: 'Avenir Next Cyr Demi', sans-serif;
+}
+
+.font-text-thin {
+	font-family: 'Avenir Next Cyr Thin', sans-serif;
+}
+
+.news-with-photo {
+	background-color: rgba($primaryLight, 1);
+}
+.news-with-photo img {
+	opacity: 0.5;
+}
+
+.news-with-photo a {
+	font-family: 'Avenir Next Cyr Demi', sans-serif;
+	color: #fff;
+	background-color: rgba($neutral, 0.6);
+	font-size: 1.2rem;
+	padding: 1rem 1.2rem;
+	margin-left: -1.2rem;
+}
+
+.card-img-overlay span {
+	line-height: 20px;
+}
+
+.section {
+	background-color: rgba($neutralLight, 0.5);
+	border-radius: 3px;
+}
+
+.text-size-20 {
+	font-size: 1.2rem;
+}
+
+.font-text-medium {
+	font-family: 'Avenir Next Cyr Medium', sans-serif;
+}

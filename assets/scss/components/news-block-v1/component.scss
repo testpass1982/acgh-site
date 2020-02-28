@@ -1,0 +1,22 @@
+@import '_variables.scss';
+
+
+.neutral_bordered {
+    border: 1px solid $neutral;
+    &:hover {
+        border-color: $primary;
+        transition: 0.3s;
+    }
+}
+
+.btn-primary-colored {
+    background-color: $primary;
+    border: 1px solid $primaryDark;
+    border-radius: 3px;
+    color: $highlight;
+
+    &:hover {
+        color: $highlight;
+        background-color: $primaryLight;
+    }
+}

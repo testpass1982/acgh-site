@@ -1,0 +1,105 @@
+{% load static %}
+{% load link_holders %}
+<!-- BG info -->
+<div class="bg-block-01" {% if slide_background %}style="background: url({{ slide_background.image.large.url }}); background-size:cover;"{% endif %}>
+    <div class="bg">
+        <div class="blog-info">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                        <div class="font-text-demi ml-2">
+                                    <p class="text-dopusk text-uppercase mb-1">Организация допущена к выполнению работ
+                                        по аттестации сварочного производства</p>
+                                    <a href="http://www.naks.ru/" class="" target="_blank">www.naks.ru</a>
+                                </div>
+
+                        <div class="about__organization__text">
+                            <p>Аттестационный центр <br> <strong>{{ profile.org_short_name }}</strong> </p>
+                        </div>
+
+                        <div class="about__organization__text__two">
+                            <p> {{ profile.org_full_name }} является
+                                членом СРО Ассоциация «Национальное Агентство Контроля Сварки», внесено в реестр Системы Аттестации Сварочного
+                                производства (САСв) Ростехнадзора и оказывает услуги по аттестации сварщиков и
+                                специалистов сварочного производства и оценки квалификации в области сварки и родственных процессов.
+                            </p>
+                        </div>
+
+                        <div class="button__zayavka__online">
+                            <a href="#" id="slider_modal" class="button__zayavka__text" data-toggle="modal" data-target="#modal-statement">
+                            {% if site_comp.parameters.order_button_title %}
+                                {{ site_comp.parameters.order_button_title }}
+                            {% else %}
+                                Подать заявку онлайн
+                            {% endif %}
+                                </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <p class="head__information">Информация</p>
+                        <div class="row align-items-stretch">
+                            <div class="col-xl-6 mb-3">
+                                <div class="head__box__text h-100">
+                                    <a href="{% link_holder 'INFO'%}">
+                                        <div class="head__box__info h-100">
+                                            {% title_holder 'INFO' %}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 mb-3">
+                                <div class="head__box__text h-100">
+                                    <a data-fancybox="" data-src="#trueModal" data-modal="true" href="javascript:;">
+                                        <div class="head__box__info h-100">
+                                            <span style='white-space:nowrap;'>Вопросы и ответы <img src="{% static 'img/icon_question.png' %}" style="width:30px;" alt=""></span>
+                                        </div>
+                                        <div id="trueModal" style="display: none; max-width: 800px;">
+                                            <h3>
+                                                <div class="close-modal-btn float-right" data-fancybox-close="#">
+                                                    <img src="{% static 'img/icon_cross.png' %}" style="width:30px;" alt="">
+                                                </div>
+                                                {{ faq.title }}
+                                            </h3>
+                                                {{ faq.text|safe}}
+                                            <p>
+                                                <button data-fancybox-close="" class="close__modal__voprosi">Закрыть</button>
+                                            </p>
+
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-6 mb-3">
+                                <div class="head__box__text h-100">
+                                    <a href="{% url 'doc' %}">
+                                        <div class="head__box__info h-100">
+                                           Документы (лицензии, сертификаты)
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 mb-3">
+                                <div class="head__box__text h-100">
+                                    <a href="{% link_holder 'OBLD' %}" title="Перечень наименований квалификаций">
+                                        <div class="head__box__info h-100">
+                                            {% title_holder 'OBLD' %}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>

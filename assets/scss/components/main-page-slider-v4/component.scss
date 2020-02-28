@@ -1,0 +1,94 @@
+@import '_variables.scss';
+.background {
+    background: url(/static_root/img/background.png) no-repeat;
+    background-size: cover; }
+
+.bg_carousel_content_one {
+    background: url(/static_root/img/background.jpg) no-repeat;
+    background-size: cover;
+
+}
+
+.bg_carousel_content_two {
+    background: url(/static_root/img/nerazrush.jpg) no-repeat;
+    background-size: cover;
+
+}
+
+.bg_carousel_content_three {
+    background: url(/static_root/img/background.jpg) no-repeat;
+    background-size: cover;
+
+}
+
+.slider__box_head_bg {
+    padding: 100px 60px;
+    min-height: 60vh;
+}
+
+.headline_name_box {
+    font-size: 30px;
+    line-height: 35px;
+    color: $primaryDark;
+    font-weight: 450;
+  }
+
+.headline_bg_content{
+    font-size: 34px;
+    font-weight: 350;
+    color: $highlight;
+        font-weight: bold;
+        line-height: 2;
+    @media screen and (max-width: 992px) {
+        font-size: 18px;
+    }
+}
+
+.head_bg_box_button {
+    // margin-bottom: 55px;
+    @media screen and (max-width: 992px) {
+       text-align: center;
+       margin-bottom: 10px;
+    }
+}
+
+.bg_carousel_content_color{
+    background-color: rgba($primaryDark, .5);
+    height: 100%;
+}
+
+.carousel-control-prev-icon {
+    background: url(/static_root/img/arrow.png) no-repeat;
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    width: 45px;
+    height: 45px;
+    // margin-right: 25px;
+
+}
+
+.carousel-control-next-icon {
+    background: url(/static_root/img/arrow.png) no-repeat;
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    width: 45px;
+    height: 45px;
+    // margin-right: 25px;
+}
+
+.slide_text {
+    color: $highlight;
+    // font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.vh5 {
+    min-height: 50vh;
+}
+

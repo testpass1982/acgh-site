@@ -1,0 +1,50 @@
+@import "_acgh-styles-common.scss";
+
+footer {
+    background-color: #002c41;
+    color: #fff;
+
+    .footer-nav a {
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .vertical-line {
+        border-left: 2px solid $yellow;
+        height: 15px;
+    }
+
+    .btn-feedback {
+        color: #fff;
+        text-transform: uppercase;
+        background-color: rgba(0, 87, 144, 1);
+        padding: 1rem 2.5rem;
+        border-radius: 0;
+
+        &:hover {
+            background-color: rgba(0, 87, 144, 0.7);
+            transition: 0.3s;
+            color: #fff;
+        }
+    }
+
+    .btn-outline-yellow {
+        color: $yellow;
+        font-size: 18px;
+        border-radius: 0;
+        padding: 1rem 2rem;
+        border: 2px solid $yellow;
+        text-transform: uppercase;
+
+        &:hover {
+            color: #002c44;
+            background-color: $yellow;
+            transition: 0.3s;
+        }
+    }
+}
+
+.footer-bottom-line {
+    background-color: #001d2b;
+    color: #729fb4;
+}

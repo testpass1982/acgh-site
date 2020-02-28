@@ -1,0 +1,96 @@
+{% load static %}
+<div class="container">
+    <div class="info__block">
+
+        {% if not site_comp.parameters.no_info_title %}
+            <div class="section__header d-inline-block py-3">Информация</div>
+            <div class="line__section"></div>
+        {% endif %}
+
+        <div class="row algin-items-stretch">
+          <div class="col-xs-12 col-xl-4 col-md-6 col-lg-12 mb-2 mb-xl-0">
+            <div class="ask__box h-100">
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="ask__text__header">
+                    <p class="ask__text">
+                      У вас возникли вопросы?
+                    </p>
+
+                  </div>
+                </div>
+                <div class="col-xl-12">
+                  <p class="ask__text__small">
+                    Воспользуйтесь формой
+                    <a href="#" class="feedback__text" data-toggle="modal" data-target="#modal-question">
+                      ОБРАТНОЙ СВЯЗИ
+                    </a>
+
+                    и мы перезвоним вам, проконсультируем и ответим
+                    на любые ваши вопросы!
+                  </p>
+                  <p class="number__mail__ask__box">Звоните {{ profile.org_main_phone }}, <br>
+                    или пишите на <a href="mailto:?subject=Написать в АЦ - {{ profile.org_short_name }}" class="mail__text__ask__box">{{ profile.org_email|safe }}</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-2 mb-xl-0">
+            <div class="search__box__img h-100">
+              <div class="search__work__box h-100">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <div class="ask__text__header">
+                      <p class="search__text__header">
+                        Поиск работы
+                      </p>
+                      <p class="search__text__header__two">
+                        в области сварки
+                      </p>
+                    <p class="adress__site_bw">
+                      BEWELDER.RU
+                    </p>
+
+                    </div>
+                  </div>
+                  <div class="col-xl-6">
+                    <button class="button__search__work">
+                      <a href="http://www.bewelder.ru/" target="_blank">
+                        Найти работу</a>
+                    </button>
+                  </div>
+                  <div class="col-xl-6">
+                    <p class="button__place__a__job">
+                      <a href="http://www.bewelder.ru/" target="_blank" class="button__place__a__job">Разместить
+                        вакансию
+                        <img src="{% static 'img/arrow__next-02.png' %}" class="arrow__next__tree" alt="">
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-xl-4 col-md-12 col-lg-12">
+            <div class="journal__box__img h-100">
+              <div class="journal__box h-100">
+                <div class="journal__img__header">
+                  <img src="{% static 'img/journal__logo.png' %}" alt="">
+                </div>
+                <p class="journal__text">
+                  Научно-технический и производственный <br>
+                  журнал по сварке, контролю и диагностике
+                </p>
+                <a href="http://svarka.naks.ru/" class="button__svarka" target="_blank">
+                  svarka.naks.ru
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

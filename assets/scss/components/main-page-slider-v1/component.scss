@@ -1,0 +1,180 @@
+@import '_variables.scss';
+
+.bg-block-01 {
+    background: url(/static_root/img/background.png) no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+
+.bg {
+    background: rgba($primaryDark, 0.5);
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+}
+
+.blog-info {
+    padding: 60px 0px 60px 0px;
+    // margin-bottom: 50px;
+}
+
+.about__organization__text {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 320px) {
+        font-size: 25px;
+    }
+
+}
+
+.about__organization__text__two {
+    font-size: 16px;
+    margin-bottom: 30px;
+
+    @media screen and (max-width: 320px) {
+        font-size: 16px
+    }
+}
+
+.button__zayavka__online {
+    background-color: $neutral;
+    border-radius: 3px;
+    text-align: center;
+    border: none;
+    display: block;
+    width: 45%;
+
+    @media screen and (max-width: 1400px) {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
+
+    @media screen and (max-width: 990px) {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 480px) {
+        margin-bottom: 0px;
+    }
+
+    @media screen and (max-width: 320px) {
+        margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 425px) {
+        margin-bottom: 15px;
+    }
+
+}
+
+.button__zayavka__online a {
+    display: block;
+    padding: 15px;
+}
+
+.button__zayavka__online:hover {
+    background-color: $neutralDark;
+    transition: 0.3s;
+}
+
+.button__zayavka__text {
+    color: $primary;
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 320px) {
+        font-size: 12px;
+    }
+}
+
+.button__zayavka__text:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button__zayavka__text:active {
+    background-color: #c92525;
+    border-radius: 3px;
+}
+
+.head__information {
+    font-size: 26px;
+    font-weight: 350;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: 375px) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 320px) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 425px) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+        text-align: center;
+    }
+
+}
+
+.head__box__text {
+    font-size: 20px;
+    font-weight: 300;
+    a {
+        color: $primaryDark;
+    }
+}
+
+.header__vopros__text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.vopros__text {
+    font-size: 24px;
+    font-weight: 300;
+    color: #000;
+    margin-top: 15px;
+}
+
+.vopros__otvet {
+    background-color: rgba(60, 255, 0, 0.1);
+    padding: 7px;
+    margin-top: 10px;
+}
+.vopros__otvet__main {
+    background-color: rgba(0, 174, 255, 0.1);
+    padding: 7px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.head__box__info {
+    background-color: rgba($secondary, 0.8);
+    padding: 45px 35px;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    border-bottom: 3px solid $highlight;
+}
+
+.head__box__info:hover {
+    background-color: $secondary;
+}
+
+.close-modal-btn {
+    cursor: pointer;
+}
+
+.text-dopusk {
+	font-size: 0.7rem;
+}

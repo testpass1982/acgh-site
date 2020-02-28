@@ -1,0 +1,15 @@
+<div class="container">
+<div class="section__header d-inline-block">Новости</div>
+    <div class="row">
+        {% for post in not_pictured_posts %}
+        <div class="col-xl-4">
+                <div class="neutral_bordered m-3 p-3">
+                <h4>{{ post.title }}</h3>
+                <p class="my-3">{{ post.short_description }}</p>
+                <a class="btn btn-primary-colored" href="{% url 'details_news' post.pk %}">Подробнее</a>
+                </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>

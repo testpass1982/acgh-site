@@ -1,0 +1,34 @@
+.owl-carousel a{
+text-decoration: none;
+}
+
+.name_personal{
+    font-size: 16px;
+    color: #494949;
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 450;
+}
+
+.img_personal:hover{
+    transition: 0.2s;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -o-transform: scale(1.01);
+}
+
+.box_content_personal{
+    background: url(/static_root/img/bg_personal.jpg) no-repeat;
+    background-size: cover;
+    padding: 45px 0px 45px;
+}
+
+.main_personal_position{
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 350;
+}

@@ -1,0 +1,14 @@
+{% load static %}
+                            <div class="col-sm-6">
+                                <div class="block-right-down d-flex align-items-center">
+                                    <div class="row align-items-center">
+                                        <div class="col-10">
+                                            <a href="{% url 'service_details' service.pk %}#page-top" class="d-block">{{ service.title }}</a>
+                                        </div>
+                                        <div class="col-2">
+                                            <img src="{% static 'img/img-head-arrow-right.png' %}" class="img-fluid text-right"
+                                                alt="Icon arrow right">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>

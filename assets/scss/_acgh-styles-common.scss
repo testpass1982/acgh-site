@@ -1,0 +1,57 @@
+// Variables
+$yellow: #ffc003;
+// End Variables
+
+
+.text-yellow {
+    color: $yellow;
+}
+
+a.text-yellow {
+    &:hover {
+        color: $yellow;
+    }
+}
+
+// .container {
+//     width: 1200px;
+// }
+
+h1 {
+    text-align: center;
+    color: #002c41;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.btn-yellow {
+    color: #002c44;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border: 2px solid $yellow;
+    background-color: $yellow;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $yellow;
+        background-color: transparent;
+        transition: 0.3s;
+    }
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #005790;
+    border-color: #005790;
+
+    &:hover {
+        background-color: rgba(0, 87, 144, 0.7);
+        transition: 0.3s;
+        color: #fff;
+    }
+}

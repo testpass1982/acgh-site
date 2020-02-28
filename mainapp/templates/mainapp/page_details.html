@@ -1,0 +1,70 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg_header_inner_page" id="page_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3">
+                <div class="headline_bg_inner_page">
+                    {{ post.title }}
+                </div>
+                <button class="back_to_home_page">
+                    <a href="{% url 'index' %}" class="link_to_home_page">
+                        <img src="{% static 'img/back_to_page.png' %}" class="img_back_to_page" alt="">На главную
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box_content_in_pages">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="box_info_content">
+                    <div class="headline_content_box_content">
+                        {{ post.title }}
+                    </div>
+
+                    {% if 'article_details' not in request.path %}
+                        {% if not post.disable_order_button %}
+                            <div>
+                                {% comment %} {{ request.get_full_path }} {% endcomment %}
+
+                                <button class="request_page_details">
+                                    <a href="" data-toggle="modal" data-target="#modal-statement"
+                                        class="request_button_page_details">Подать
+                                        заявку</a>
+                                </button>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    <div class="line_center"></div>
+                    <div class="content_text_page_details">
+                        {{ post.text|safe }}
+                        {{ post.html|safe }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <h3>{{side_panel.title}}</h3>
+                {% include 'mainapp/includes/side_panel.html' %}
+                 {% if images %}
+                    <p class="p-2">Фото для публикации:</p>
+                    {% for image in images %}
+                    <a href="{{ image.image.url }}" target="blank"><img class="news-details-atteched-image img-fluid" src="{{ image.image.url }}"
+                            alt="{{image.title}}"></a>
+                    {% endfor %}
+                    {% else %}
+                    <div class="alert alert-warning">Фотографии для данной публикации отсутствуют</div>
+                {% endif %}
+            </div>
+            <div class="container">
+            {% for parameter in page_parameters %}
+                {% include parameter %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

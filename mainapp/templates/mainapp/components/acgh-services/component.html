@@ -1,0 +1,99 @@
+{% load link_holders %}{% load static %}
+<div class="services py-5">
+    <div class="container">
+        <h1 class="my-4">Наши услуги</h1>
+        <nav class="nav nav-pills flex-column flex-sm-row mb-5" id="pills-tab" role="tablist">
+            <a class="flex-sm-fill text-sm-center nav-link active" id="pills-att-tab" data-toggle="pill" href="#pills-att" role="tab" aria-controls="pills-att" aria-selected="true">Услуги по аттестации</a>
+            <a class="flex-sm-fill text-sm-center nav-link" id="pills-qual-tab" data-toggle="pill" href="#pills-qual" role="tab" aria-controls="pills-qual" aria-selected="true">Оценка квалификации</a>
+            <a class="flex-sm-fill text-sm-center nav-link" id="pills-cert-tab" data-toggle="pill" href="#pills-cert" role="tab" aria-controls="pills-cert" aria-selected="false">Услуги сертификации</a>
+            <a class="flex-sm-fill text-sm-center nav-link" id="pills-control-tab" data-toggle="pill" href="#pills-control" role="tab" aria-controls="pills-control" aria-selected="false">Услуги контроля</a>
+        </nav>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-att" role="tabpanel" aria-labelledby="pills-att-tab">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                    <img src="{% static '/img/service1.png' %}" class="card-img" alt="photo">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h3 class="card-title my-2 my-xl-4">Аттестация сварочных технологий</h3>
+                                        <p class="card-text text-secondary">Аттестация сварочных технологий проводится ООО "АЦГХ", зарегистрированном в реестре НАКС за № АЦСТ-87, в соответствии с требованиями РД-03-615-03.</p>
+                                    </div>
+                                    <div class="card-footer py-2 py-xl-3">
+                                        <a href="#" class="btn-details">Подробнее<img src="{% static '/img/acgh-arrow-details.png' %}" class="ml-2" alt="arrow-icon"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                    <img src="{% static '/img/service2.png' %}" class="card-img" alt="photo">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h3 class="card-title my-2 my-xl-4">Аттестация сварочных материалов</h3>
+                                        <p class="card-text text-secondary">Аттестация сварочных материалов проводится ООО "АЦГХ", зарегистрированном в реестре НАКС за № АЦСМ-47, в соответствии с РД-03-613-03.</p>
+                                    </div>
+                                    <div class="card-footer py-2 py-xl-3">
+                                        <a href="#" class="btn-details">Подробнее<img src="{% static '/img/acgh-arrow-details.png' %}" class="ml-2" alt="arrow-icon"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                    <img src="{% static '/img/service3.png' %}" class="card-img" alt="photo">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h3 class="card-title my-2 my-xl-4">Аттестация сварочного оборудования</h3>
+                                        <p class="card-text text-secondary">Аттестация сварочного оборудования проводится ООО "АЦГХ", зарегистрированном в реестре НАКС за № АЦСО-66, в соответствии с РД-03-614-03.</p>
+                                    </div>
+                                    <div class="card-footer py-2 py-xl-3">
+                                        <a href="#" class="btn-details">Подробнее<img src="{% static '/img/acgh-arrow-details.png' %}" class="ml-2" alt="arrow-icon"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-6">
+                                    <img src="{% static '/img/service4.png' %}" class="card-img" alt="photo">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card-body">
+                                        <h3 class="card-title my-2 my-xl-4">Аттестация персонала сварочного производства</h3>
+                                        <p class="card-text text-secondary">Аттестация персонала сварочного производства проводится ООО "АЦГХ", зарегистрированном в реестре НАКС за № МР-23АЦ, в соответствии с правилами и нормативами ПБ-03-273-99, РД-03-495-02.</p>
+                                    </div>
+                                    <div class="card-footer py-2 py-xl-3">
+                                        <a href="#" class="btn-details">Подробнее<img src="{% static '/img/acgh-arrow-details.png' %}" class="ml-2" alt="arrow-icon"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-qual" role="tabpanel" aria-labelledby="pills-qual-tab">
+                <h4>Оценка квалификации</h4>
+            </div>
+            <div class="tab-pane fade" id="pills-cert" role="tabpanel" aria-labelledby="pills-cert-tab">
+                <h4>Услуги сертификации</h4>
+            </div>
+            <div class="tab-pane fade" id="pills-control" role="tabpanel" aria-labelledby="pills-control-tab">
+                <h4>Услуги контроля</h4>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="section-block mb-5">
+{% if articles %}
+{% for article in articles %}
+    <div class="section p-3 p-sm-4 mb-4">
+        <p class="text-size-20 mb-3 mb-lg-4">{{ article.title }}</p>
+        <div class="row">
+            <div class="col-6"><small>{{ article.published_date|date:"d M. Y"}}</small></div>
+            <div class="col-6 text-right"><a href="{% url 'article_details' article.pk %}" class="btn btn-outline-purple btn-sm">Читать
+                    →</a></div>
+        </div>
+    </div>
+{% endfor %}
+{% else %}
+    Демо статьи
+    <div class="section p-3 p-sm-4 mb-4">
+        <p class="text-size-20 mb-3 mb-lg-4">Применение СМТ технологий при сварке</p>
+        <div class="row">
+            <div class="col-6"><small>08 Июля 2018</small></div>
+            <div class="col-6 text-right"><a href="#" class="btn btn-outline-purple btn-sm">Читать
+                    →</a></div>
+        </div>
+    </div>
+    <div class="section p-3 p-sm-4 mb-4">
+        <p class="text-size-20 mb-3 mb-lg-4">Соединение разнородных материалов</p>
+        <div class="row">
+            <div class="col-6"><small>05 Июля 2018</small></div>
+            <div class="col-6 text-right"><a href="#" class="btn btn-outline-purple btn-sm">Читать
+                    →</a></div>
+        </div>
+    </div>
+</div>
+{% endif %}

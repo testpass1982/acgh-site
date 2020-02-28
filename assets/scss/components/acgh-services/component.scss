@@ -1,0 +1,87 @@
+@import "_acgh-styles-common.scss";
+
+.services {
+    background-color: rgba(243, 243, 243, 1);
+
+    .nav-pills {
+        .nav-link.active {
+            background-color: $yellow;
+            color: #002c44;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                /* Абсолютное позиционирование */
+                left: 50%;
+                bottom: -45px;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                /* Положение треугольника */
+                border: 15px solid transparent;
+                /* Прозрачные границы */
+                border-top: 15px solid $yellow;
+                /* Добавляем треугольник */
+            }
+
+            &:hover {
+                background-color: $yellow;
+            }
+        }
+
+        .nav-link {
+            background-color: #002c41;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 0;
+            padding: 1rem;
+            font-size: 21px;
+
+            &:hover {
+                background-color: #005790;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .card {
+        box-shadow: 0 0 21px rgba(0, 0, 0, 0.08);
+        border-radius: 0;
+        display: flex;
+        position: relative;
+
+        .card-img {
+            border-radius: 0;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: #002c41;
+
+            @media (min-width: 992px) and (max-width: 1279px) {
+                font-size: 1.25rem;
+            }
+        }
+
+        .card-footer {
+            background-color: #002c41;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            border-radius: 0;
+            border-top: 0;
+            border-right: 9px solid $yellow;
+            text-align: center;
+
+            @media (max-width: 767px) {
+                position: static;
+            }
+        }
+
+        .btn-details {
+            font-size: 17px;
+            text-transform: uppercase;
+            color: $yellow;
+        }
+    }
+}

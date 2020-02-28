@@ -1,0 +1,125 @@
+{% load link_holders %}{% load static %}
+<header class="header-other">
+    <div class="wrap-header-main">
+        <div class="top-header-line text-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 d-none d-md-block">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control border-0" aria-describedby="button-search">
+                                <div class="input-group-append">
+                                    <button class="btn border-0 btn-head-search" type="submit" id="button-search"><img src="{% static '/img/acgh-search-icon.png' %}" alt=""></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm text-center no-gutters">
+                        <div class="head-contact-left">
+                            <img src="{% static '/img/acgh-mail-icon.png' %}" class="mr-1" alt="icon">
+                            <a href="mailto:ac-mosgaz@yandex.ru" class="text-white">ac-mosgaz@yandex.ru</a>
+                        </div>
+                    </div>
+                    <div class="col-sm text-center no-gutters">
+                        <div class="head-contact-right">
+                            <img src="{% static '/img/acgh-phone-icon.png' %}" class="mr-1" alt="icon">
+                            <a href="tel:+79256011400" class="text-yellow">+7 (925) 601-14-00</a>
+                            <span class="d-inline-block d-md-none d-xl-inline-block text-white ml-2">г.&nbsp;Москва</span>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 d-none d-xl-block">
+                        <button class="btn btn-feedback float-right" type="button" id="button-feedback" data-toggle="modal" data-target="#feedbackModal">Обратная связь</button>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <a class="navbar-brand img-fluid" href="{% url 'index' %}"><img src="{% static '/img/acgh-logo.png' %}" alt="Логотип АЦГХ"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <!-- <span class="navbar-toggler-icon"></span> -->
+                        <i class="fa fa-bars fa-2x"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">Главная <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">О&nbsp;компании</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">Услуги</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">Контакты</a>
+                            </li>
+                        </ul>
+                        <div class="d-inline-block">
+                            <button class="btn btn-lg btn-outline-yellow" type="button" onclick="window.open('https://ac.naks.ru/')">Авторизация в ЭДО НАКС</button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- <div class="services-detail py-5">
+    <div class="container">
+        <h1 class="my-4">Аттестация сварочных технологий</h1>
+        <p class="text-secondary">Технологии сварочных и наплавочных работ, выполняемых при изготовлении, монтаже, ремонте и реконструкции опасных производственных объектов, должны проходить обязательную аттестацию. Аттестация подразделяется на исследовательскую и производственную.</p>
+        <p class="text-secondary">Исследовательская аттестация проводится при подготовке новых, ранее не аттестованных технологий. Производственная аттестация осуществляется для подтверждения того, что конкретная организация обладает всеми организационными и техническими возможностями, а также квалифицированными кадрами для выполнения работ по аттестуемым технологиям, а сварные соединения, полученные по данным технологиям в производственных условиях, соответствуют требованиям нормативной документации.</p>
+        <div class="row align-items-stretch my-5">
+            <div class="col-lg-9">
+                <div class="img-container">
+                    <img src="{% static '/img/img-welder.png' %}" class="img-fluid" alt="photo">
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="block-yellow d-sm-flex d-lg-block h-100">
+                    <img src="{% static '/img/acgh-check-icon.png' %}" class="p-3 p-sm-4 p-xl-5" alt="icon">
+                    <div class="block-yellow-content p-3 p-sm-4 p-xl-5">
+                        <h3>Исследовательская аттестация проводится при подготовке новых, ранее не аттестованных технологий.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Исследовательская аттестация проводится при подготовке новых.</h3>
+        <p class="text-secondary">Производственную и исследовательскую аттестации проводят аттестационные центры. Для аттестации технологии сварки организация должна иметь аттестованный персонал специалистов по сварке, по контролю качества и по испытанию сварных соединений, а также располагать аттестованной испытательной лабораторией. На основании предоставляемой заявителем производственно-технологической документации составляется Программа производственной аттестации. В соответствии с ней, в условиях производства заявителя выполняется сварка контрольных соединений с их последующим неразрушающим и разрушающим контролем. По результатам испытаний составляется заключение о готовности организации к использованию аттестованных технологий и оформляются соответствующие свидетельства.</p>
+        <p class="text-secondary">Технологии сварочных и наплавочных работ, выполняемых при изготовлении, монтаже, ремонте и реконструкции опасных производственных объектов, должны проходить обязательную аттестацию. Аттестация подразделяется на исследовательскую и производственную.</p>
+        <p class="text-secondary">Исследовательская аттестация проводится при подготовке новых, ранее не аттестованных технологий. Производственная аттестация осуществляется для подтверждения того, что конкретная организация обладает всеми организационными и техническими возможностями, а также квалифицированными кадрами для выполнения работ по аттестуемым технологиям, а сварные соединения, полученные по данным технологиям в производственных условиях, соответствуют требованиям нормативной документации.</p>
+        <div class="my-5">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-3">
+                    <div class="img-container">
+                        <img src="{% static '/img/video-img.png' %}" class="img-fluid" alt="video">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h3>Исследовательская аттестация проводится при подготовке новых.</h3>
+                    <p class="text-secondary">Производственную и исследовательскую аттестации проводят аттестационные центры. Для аттестации технологии сварки организация должна иметь аттестованный персонал специалистов по сварке, по контролю качества и по испытанию сварных соединений, а также располагать аттестованной испытательной лабораторией. На основании предоставляемой заявителем производственно-технологической документации составляется Программа производственной аттестации. В соответствии с ней, в условиях производства заявителя выполняется сварка контрольных соединений с их последующим неразрушающим и разрушающим контролем. По результатам испытаний составляется заключение о готовности организации к использованию аттестованных технологий и оформляются соответствующие свидетельства.</p>
+                </div>
+            </div>
+            <p class="text-secondary">Исследовательская аттестация проводится при подготовке новых, ранее не аттестованных технологий. Производственная аттестация осуществляется для подтверждения того, что конкретная организация обладает всеми организационными и техническими возможностями, а также квалифицированными кадрами для выполнения работ по аттестуемым технологиям, а сварные соединения, полученные по данным технологиям в производственных условиях, соответствуют требованиям нормативной документации.</p>
+        </div>
+        <div class="actyvity p-3 p-sm-4 p-xl-5 mb-5">
+            <h3 class="mb-4">Область деятельности АЦСТ-87 ООО "Аттестационный Центр Городского Хозяйства":</h3>
+            <ul class="pl-3 mb-0">
+                <li class="text-yellow mb-2"><span class="text-secondary mr-2">Виды аттестации технологий:</span><span class="activity-text-bold">Исследовательская, Производственная.</span></li>
+                <li class="text-yellow mb-2"><span class="text-secondary mr-2">Группы технических устройств опасных производственных объектов:</span><span class="activity-text-bold">ПТО; КО; ГО; НГДО; МО; ГДО; ОХНВП; ОТОГ; СК.</span></li>
+                <li class="text-yellow"><span class="text-secondary mr-2">Способы сварки (наплавки):</span><span class="activity-text-bold">ААД; ААДН; ААДП; ААДПН; АЛСН; АПГ; АПГН; АПИ; АПИН; АППГ; АППГН; АПС; АПСН; АФ; АФДС; АФЛН; АФПН; ВЧС; Г; ГН; ЗН; ИН; К; КСО; КСС; КТС; КШС; Л; МАДП; МАДПН; МДС; МКС; МЛСН; МП; МПГ; МПГН; МПИ; МПИН; МПН; МПС; МПСН; МСОД; МФ; НГ; НИ; П; ПАК; ПНП; ППН; РАД; РАДН; РД; РДН; СТ; Т; Э; ЭЛ; ЭШ.</span></li>
+            </ul>
+        </div>
+        <div class="mb-5">
+            <a href="#" class="link-doc d-block mb-4" target="_blank"><img src="/static_root/img/acgh-arrow-details.png" class="mr-2" alt="arrow-icon">Заявка на аттестацию сварочных технологий (электронная форма)</a>
+            <a href="#" class="link-doc d-block mb-4" target="_blank"><img src="/static_root/img/acgh-arrow-details.png" class="mr-2" alt="arrow-icon">Образец заявки на аттестацию сварочных технологий (газовая сварка)</a>
+            <a href="#" class="link-doc d-block mb-4" target="_blank"><img src="/static_root/img/acgh-arrow-details.png" class="mr-2" alt="arrow-icon">Образец заявки на аттестацию сварочных технологий (ручная дуговая сварка)</a>
+            <a href="#" class="link-doc d-block mb-4" target="_blank"><img src="/static_root/img/acgh-arrow-details.png" class="mr-2" alt="arrow-icon">Образец заявки на аттестацию сварочных технологий (сварка с закладными нагревателями)</a>
+            <a href="#" class="link-doc d-block" target="_blank"><img src="/static_root/img/acgh-arrow-details.png" class="mr-2" alt="arrow-icon">Образец заявки на аттестацию сварочных технологий (сварка нагретым инструментом)</a>
+        </div>
+        <button class="btn-yellow d-sm-block mb-5">Подать заявку онлайн</button>
+    </div>
+</div> -->

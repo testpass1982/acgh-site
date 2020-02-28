@@ -1,0 +1,249 @@
+// footer
+@import '_variables.scss';
+
+.box_footer_bg{
+    padding: 80px;
+    @media screen and (max-width: 1440px) {
+        padding: 25px 25px 25px;
+    }
+    @media screen and (max-width: 435px) {
+     padding: 15px 15px 15px;
+    }
+}
+
+.box_footer_bg{
+background-color: $primaryDark;
+margin-top: -5px;
+}
+
+.footer_text_company{
+  color: $neutralLight;
+  margin-top: 35px;
+  margin-bottom: 25px;
+}
+
+.spks_logo{
+    margin-left: 15px;
+    @media screen and (max-width: 435px) {
+        margin-bottom: 15px;
+        margin-top: 15px;
+       }
+}
+
+.name_info_block{
+    color: $neutral;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+}
+
+.footer_number{
+    font-size: 16px;
+    font-weight: 500;
+    color: $neutral;
+    margin-bottom: 0px;
+}
+
+.box_footer_news a {
+    color: $secondary;
+}
+
+.footer_number_text{
+font-size: 12px;
+color: $neutral;
+margin-bottom: 0px;
+}
+
+.footer_number_mail{
+font-size: 14px;
+color: $neutral;
+}
+
+.footer_news{
+    font-size: 14px;
+    color: $neutral;
+    font-weight: 400;
+    margin-bottom: 0px;
+}
+
+.date_news_footer{
+    color: $neutral;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+
+.point_grey::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 0;
+    margin-top: 5px;
+    background: url(/static_root/img/yellow_punkt.png) center 0 no-repeat;
+}
+
+.footer_info_link{
+    font-size: 12px;
+    color: rgb(156, 156, 156);
+    margin-left: 15px;
+}
+
+.feedback_button_footer a{
+    text-decoration: none;
+    color: $neutral;
+    margin-top: 35px;
+}
+
+.feedback_button_footer{
+    @media screen and (max-width: 435px) {
+    margin-top: 15px;
+    margin-bottom: 15px;
+           }
+}
+
+.feedback_button_footer {
+     @media screen and (max-width: 435px) {
+        margin-top: 15px;
+       }
+}
+
+
+.feedback_footer {
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #ffe13a;
+    padding: 10px 50px;
+    border-radius: 45px;
+    color: #fff;
+    @media screen and (max-width: 435px) {
+        margin-top: 25px;
+       }
+    &:hover {
+        background-color: #ffffff25;
+        transition: 0.2s;
+    }
+
+}
+
+.box_basement{
+    padding: 15px 0px 0px;
+    @media screen and (max-width: 435px) {
+    text-align: center;
+       }
+}
+
+
+
+.basement_text_prava_kompany{
+    font-size: 11px;
+    color: $highlight;
+    margin-bottom: 0px;
+}
+
+.political_konf a{
+    font-size: 11px;
+    color: $highlight;
+    margin-bottom: 0px;
+}
+
+.razrabotano_basement_footer{
+    font-size: 11px;
+    text-align: right;
+    @media screen and (max-width: 435px) {
+        text-align: center;
+           }
+    a{
+        color: $highlight;
+    }
+
+}
+
+
+.basement_number {
+    text-align: right;
+a{
+    font-size: 22px;
+    color: $neutral;
+}
+}
+
+.basement_mail {
+    text-align: right;
+    margin-bottom: 15px;
+a{
+    font-size: 16px;
+    color: $neutral;
+    text-align: right;
+
+}
+}
+
+.basement_number_text{
+    font-size: 16px;
+    color: $neutral;
+    text-align: right;
+
+}
+
+.line_footer_basement{
+    border-bottom: 0.5px solid #6f7379;
+    width: 150px;
+    margin-top: 25px;
+   margin-bottom: 25px;
+   @media screen and (max-width: 435px) {
+    width: 100%;
+       }
+}
+
+.enter_system_edo::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    margin-left: -15px;
+    margin-top: 5px;
+    background: url(/static_root/img/enter_system.png) center 0 no-repeat;
+  }
+
+  .enter_system_link{
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 25px;
+  }
+
+  .enter_system_edo a{
+    text-decoration: none;
+    color: $background;
+    @media screen and (max-width: 1200px) {
+     margin-top: 15px;
+     margin-bottom: 15px;
+    }
+  }
+
+  .enter_system_edo {
+    text-align: right;
+    @media screen and (max-width: 1200px) {
+     margin-top: 25px;
+     margin-bottom: 25px;
+    }
+  }
+
+.basement_contacti{
+    font-size: 12px;
+    color: rgb(202, 202, 202);
+    padding: 0px 0px 0px;
+}
+
+.basement_phone{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgb(202, 202, 202);
+}
+
+.line_basement{
+    border-bottom: 0.5px solid #6f7379;
+    margin-bottom: 15px;
+}

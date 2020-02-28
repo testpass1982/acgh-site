@@ -1,0 +1,134 @@
+{% load link_holders %}
+{% load static %}
+<div class="box_footer_bg">
+    <div class="container">
+        <div class="footer_box_info_all">
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="logo_footer {% if user.is_authenticated %}editable{% endif %}">
+                        <img class="img-fluid" src="
+                        {% if profile.org_footer_logotype %}
+                            {{ profile.org_footer_logotype.url }}
+                        {% elif profile.org_logotype %}
+                            {{ profile.org_logotype.url }}
+                        {% else %}
+                            http://place-hold.it/200x80
+                        {% endif %}
+                        " alt="">
+                    </div>
+                    <p class="footer_text_company {% if user.is_authenticated %}editable{% endif %}">
+                        {{ profile.org_full_name }}<br>
+                        <strong>{{ profile.org_address }}</strong>
+                    </p>
+
+                    {% comment %} <div class="logo_footer_sasp d-inline-block">
+                        <img src="{% static '/img/footer_logo_sasp.png' %}" alt="">
+                    </div> {% endcomment %}
+                    <div class="rsps_logo d-inline-block">
+                        <a href="http://www.rsps.site" target="_blank">
+                            <img src="{% static '/img/rsps_logo.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-1">
+
+                </div>
+                <div class="col-sm-4 col-md-4 col-xl-2">
+                    <div class="head_info_footer">
+                        <p class="name_info_block">
+                            Новости
+                        </p>
+                    </div>
+                    {% for post in basement_news %}
+                    <div class="box_footer_news {% if user.is_authenticated %}editable{% endif %}">
+                        <a href="{% url 'details_news' post.pk %}">
+                            <p class="footer_news">
+                                {{ post.title }}
+                            </p>
+                        </a>
+                        <p class="date_news_footer">
+                            {{ post.published_date|date:"d M. Y"}}
+                        </p>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+                <div class="col-sm-4 col-md-4 col-xl-2">
+                    <div class="head_info_footer">
+                        <p class="name_info_block">
+                            Информация
+                        </p>
+                    </div>
+                    <div class="box_footer_info">
+                        <a href="http://naks.ru" target="_blank" class="point_grey">
+                            <p class="footer_info_link">
+                                Национальное Агентство
+                                Контроля Сварки
+                            </p>
+                        </a>
+                    </div>
+                    <div class="box_footer_info">
+                        <a href="http://bewelder.ru" target="_blank" class="point_grey">
+                            <p class="footer_info_link">
+                                Поиск работы <br> в области сварки
+                            </p>
+                        </a>
+                    </div>
+                    <div class="box_footer_info">
+                        <a href="http://svarka.naks.ru" target="_blank" class="point_grey">
+                            <p class="footer_info_link">
+                                Журнал сварка <br> и диагностика
+                            </p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 offset-xl-1 col-xl-3">
+                    <div class="basement_number {% if user.is_authenticated %}editable{% endif %}">
+                        <a href="tel:{{profile.org_main_phone}}">{{ profile.org_main_phone }}</a>
+                    </div>
+                    <div class="basement_number_text">
+                        {{ profile.org_short_name }}
+                    </div>
+                                <div class="basement_mail {% if user.is_authenticated %}editable{% endif %}">
+                                    <a href="mailto:{{profile.org_email}}" title="Написать письмо">{{profile.org_email|safe}}</a>
+                                </div>
+                    <div class="enter_system_edo">
+                        <a href="https://ac.naks.ru/" class="enter_system_link" target="_blank">
+                            Войти в систему ЭДО</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="basement_footer">
+        <div class="container">
+            <div class="line_footer_basement"></div>
+            <div class="box_basement">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-xl-4 col-md-4">
+                        <p class="basement_text_prava_kompany">
+                            © {{ profile.org_short_name }} <br> Все права защищены
+                        </p>
+                    </div>
+                    <div class="col-xl-3 col-md-4">
+                        <div class="political_konf" target="_blank">
+                            <a href="{% link_holder 'PRIVACY_POLICY' %} ">{% title_holder 'PRIVACY_POLICY' %}</a>
+                        </div>
+
+                    </div>
+
+                    <div class="col-xl-5">
+                        <div class="razrabotano_basement_footer">
+                            <a href="http://www.naks.ru/naksmedia/" target="_blank" class="razrabotano__v__naks__media">
+                                Разработано в - НАКС Медиа</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

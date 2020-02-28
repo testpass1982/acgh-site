@@ -1,0 +1,24 @@
+@import '_variables.scss';
+.head_number {
+    @media screen and (max-width: 576px) {
+        text-align: center;
+    }
+}
+
+.consultant_text {
+    font-size: 14px;
+    color: $primary;
+}
+
+.auth-edo-btn {
+    border: 1px solid $primary;
+    box-shadow: 0 0 10px $primaryDark;
+    color: $primary;
+
+    padding: 15px;
+    &:hover {
+        border: 2px solid $primary;
+        background-color: $primary;
+        color: $highlight;
+    }
+}

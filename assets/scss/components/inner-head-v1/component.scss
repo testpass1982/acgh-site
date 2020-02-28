@@ -1,0 +1,51 @@
+@import '_variables.scss';
+
+.logo_box_head {
+    @media screen and (max-width: 576px) {
+        padding: 15px 10px;
+        text-align: center;
+    }
+}
+
+.head_number {
+    @media screen and (max-width: 576px) {
+        text-align: center;
+    }
+
+}
+
+.phone_number {
+    font-size: 18px;
+    font-weight: 500; }
+    @media screen and (max-width: 1300px) {
+      .number {
+        font-size: 20px;
+    }
+}
+
+.consultant_text {
+    font-size: 14px;
+}
+
+.logo_box_free {
+    padding: 40px 0px; }
+    @media screen and (max-width: 942px) {
+      .logo_box_free {
+        display: none;
+    }
+}
+
+.logo_otstup {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.auth_edo_btn {
+    color: $primary;
+    border: 1px solid $primary;
+    &:hover {
+        background-color: $primary;
+        color: $highlight;
+        border: 2px solid $primary;
+    }
+}

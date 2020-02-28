@@ -1,0 +1,74 @@
+    {% load static %}
+    <div class="border-bottom w-100 py-3">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-sm-5 col-xl-4">
+                    <div class="d-flex align-items-center">
+
+                            <div{% if site_comp.parameters.logo_title %} class="w-50"{% endif %}>
+                                <a href="{% url 'index' %}">
+                                    <img class="{% if not profile.org_logotype %}header-logo {% endif %}img-fluid pr-3" src="{% if profile.org_logotype %}{{ profile.org_logotype.url }}{% else %}http://place-hold.it/200x80{% endif %}" alt="Logotip_company">
+                                </a>
+                            </div>
+
+                            {% autoescape off %}
+                            {% if site_comp.parameters.logo_title %}
+                                <h3 class="w-50">{{ site_comp.parameters.logo_title }}</h3>
+                            {% endif %}
+                            {% endautoescape %}
+
+                    </div>
+                    {% comment %} <div class="row align-items-center">
+                        <div class="col-6">
+                            <a href="{% url 'index' %}">
+                                <img class="{% if not profile.org_logotype %}header-logo {% endif %}img-fluid pr-3" src="{% if profile.org_logotype %}{{ profile.org_logotype.url }}{% else %}http://place-hold.it/200x80{% endif %}" alt="Logotip_company">
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            {% if site_comp.parameters.logo_title %}
+                                <h2>{{ site_comp.parameters.logo_title }}</h2>
+                            {% endif %}
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+                <div class="col-sm-7 col-xl-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <p class="font-text-demi mb-0">{{ profile.org_main_phone }}</p>
+                            <p class="font-text-demi mb-0">{{ profile.org_secondary_phone }}</p>
+                        </div>
+                        <div class="col-6 text-right">
+                            <p class="font-text-thin text-secondary mb-0">{{ profile.org_email|safe }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                    <div class="row align-items-center mt-sm-3 mt-xl-0">
+                        <div class="col-sm-12 col-md-5 d-xl-none">
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control border" placeholder="" aria-label=""
+                                        aria-describedby="basic-addon2">
+                                    <div class="input-group-append mb-3">
+                                        <button class="btn btn-search bg-transparent border" type="button" title="Поиск">
+                                        <img src="{% static 'img/icon-search.png' %}" alt="Поиск"></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col text-right">
+                            <a id="order_modal_button" href="#" class="btn btn-outline-blue py-2 mb-2 mb-lg-0" data-toggle="modal" data-target="#modal-statement">
+                            {% if site_comp.parameters.order_button_title %}
+                                {{ site_comp.parameters.order_button_title }}
+                            {% else %}
+                            Оставить заявки
+                            {% endif %}
+                            </a>
+                            <a href="https://ac.naks.ru" target="_blank" class="btn btn-blue py-2 mb-2 mb-lg-0"><img src="{% static 'img/img-enter.png' %}" alt="Icon enter"
+                                    class="img-fluid mr-2">Войти в систему <strong>ЭДО</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

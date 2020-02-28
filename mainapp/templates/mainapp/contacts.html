@@ -1,0 +1,79 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg_header_inner_page" id="page_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="headline_bg_inner_page">
+                    Контакты
+                </div>
+                <button class="back_to_home_page">
+                    <a href="{% url 'index' %}" class="link_to_home_page">
+                        <img src="{% static 'img/back_to_page.png' %}" class="img_back_to_page" alt="">На главную
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box_content_in_pages">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <p id="contacts_" class="headline_contacti {% if user.is_authenticated %}editable{% endif %}">
+                    {{ profile.org_full_name }}
+                </p>
+                <div class="headline_text_contacts {% if user.is_authenticated %}editable{% endif %}">
+                    Телефон: {{ profile.org_main_phone }}
+                </div>
+                <div class="headline_text_contacts {% if user.is_authenticated %}editable{% endif %}">
+                    Email: {{ profile.org_email|safe }}
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <p class="headline_contacti">
+                    Местоположение
+                </p>
+                <div class="headline_text_contacts {% if user.is_authenticated %}editable{% endif %}">
+                    {{ profile.org_address }}
+                    {% if walktrough %}
+                    oeuou
+                    <p>
+                        <a href="{% url 'details' walktrough.pk %}">{{ walktrough.title }}</a>
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <script type="text/javascript" charset="utf-8" async src="{{ profile.org_address_map_link|safe }}"></script>
+    </div>
+
+    <div class="dotted_border_bottom"></div>
+    <div class="container">
+        <div class="row align-items-stretch">
+                {% if contacts %}
+                {% for contact in contacts %}
+                <div class="col-xl-4 mb-3">
+                <div class="bg_neutralLight_colored alert alert-secondary">
+                    <h5 class="contact_head">{{contact.title}}</h5>
+                    <hr>
+                    <p>{{ contact.description}}</p>
+                    <ul class="contacts_list">
+                        <li><i class="fas fa-phone"></i> {{contact.phone}}</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:{{contact.email}}"
+                                id="">{{contact.email}}</a>
+                        </li>
+                    </ul>
+                </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

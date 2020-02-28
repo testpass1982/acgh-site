@@ -1,0 +1,124 @@
+@import "_acgh-styles-common.scss";
+
+.header-other {
+    background-image: url(../../../../static_root/img/acgh-head_other-bcg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrap-header-main {
+    background-color: rgba(0, 44, 65, 0.5);
+    font-size: 17px;
+
+    .top-header-line {
+        hr {
+            border-top: 2px solid #113146;
+            margin: 0;
+        }
+
+        form {
+            &:hover {
+                background-color: rgba(0, 44, 65, 0.6);
+                transition: 0.3s;
+            }
+        }
+
+        .form-control {
+            color: #fff;
+            padding: 1rem;
+            height: auto;
+            border-left: 2px solid #113146 !important;
+            border-radius: 0;
+        }
+
+        .input-group-append {
+            border-left: 2px solid #113146;
+            border-right: 2px solid #113146;
+
+            .btn-head-search {
+                padding: 1rem;
+                border-radius: 0;
+            }
+        }
+
+        .head-contact-left,
+        .head-contact-right {
+            padding: 1rem;
+
+            @media (max-width: 575px) {
+                padding: 0;
+                border-left: 0;
+            }
+        }
+
+        .head-contact-right {
+            border-left: 2px solid #113146;
+
+            @media (max-width: 575px) {
+                border-left: 0;
+            }
+        }
+    }
+
+    .btn-feedback {
+        color: #fff;
+        text-transform: uppercase;
+        background-color: rgba(0, 87, 144, 1);
+        padding: 1rem 2.5rem;
+        border-radius: 0;
+
+        &:hover {
+            background-color: rgba(0, 87, 144, 0.7);
+            transition: 0.3s;
+        }
+    }
+
+    .header-main {
+        text-transform: uppercase;
+
+        .navbar {
+            padding: 2rem 0;
+        }
+
+        .nav-item.active .nav-link {
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 17px;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                border-bottom: 1px solid #fff;
+                transition: 0.3s;
+            }
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: #fff;
+
+            &:hover {
+                color: &yellow;
+            }
+        }
+
+        .btn-outline-yellow {
+            color: $yellow;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 0;
+            padding: 1rem 2rem;
+            border: 2px solid $yellow;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #002c44;
+                background-color: $yellow;
+                transition: 0.3s;
+            }
+        }
+    }
+}

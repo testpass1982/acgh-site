@@ -1,0 +1,80 @@
+@import '_variables.scss';
+
+.img-overlay {
+  background-color: rgba($secondary, 0.8);
+}
+
+.header-info {
+	background: url("/static_root/img/bcg-head.png") no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+
+.header-info .container {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+.naks-link {
+	color: $highlightDark;
+	&:hover {
+		text-decoration: underline;
+		color: $neutralDark;
+	}
+}
+
+.news-not-photo p.font-text-demi {
+	font-size: 0.875rem;
+}
+
+.text-dopusk {
+	font-size: 0.7rem;
+}
+
+.text-head {
+	font-size: 0.875rem;
+}
+
+.line-header {
+	border-color: #fff;
+}
+
+.block-right-down {
+	background-color: rgba($highlight, .5);
+	border-radius: 0.2rem;
+	padding: 20px;
+	min-height: 90%;
+	margin-bottom: 20px;
+	transition: box-shadow 0.3s ease-in-out;
+	transition: background-color 0.3s ease-in-out;
+	// min-height: 6rem;
+	@media screen and (max-width: 800px) {
+		padding: 30px;
+	}
+	&:hover {
+		background-color: rgba($highlight, .8);
+		box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	}
+}
+
+.block-right-down a {
+	font-family: 'Avenir Next Cyr Thin', sans-serif;
+	line-height: 26px;
+	font-size: 1.125rem;
+	color: rgba($primary, 1);
+}
+
+.btn-outline-primary {
+	border: solid 1px $primary;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+	color: $primary;
+	background-color: $highlight;
+	&:hover {
+		background-color: rgba($secondary, .5);
+		color: $primaryDark;
+		border: solid 1px $primaryLight;
+		background-color: $highlightLight;
+	}
+}
+
+
+

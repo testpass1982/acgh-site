@@ -1,0 +1,34 @@
+                    {% load static %}
+                    {% if not_pictured_posts %}
+                    {% for post in not_pictured_posts %}
+                    <div class="news-not-photo p-3 mb-4 mb-sm-5">
+                        <div class="row mb-2">
+                            <div class="col"><span class="head-news font-text-thin text-size-14 text-primary">
+                            {{ post.category }}
+                            </span></div>
+                            <div class="col text-right"><span class="head-news font-text-thin text-size-14 text-muted">
+                            {{ post.published_date|date:"d M. Y"}}</span></div>
+                        </div>
+                        <p class="font-text-demi">{{ post.title }}</p>
+                        <p class="font-text-thin text-size-14 d-none d-sm-block">{{ post.short_description }}</p>
+                        <a href="{% url 'details' post.pk %}#page-top" class="btn btn-silver btn-sm"><img src="{% static 'img/img-icon-doc-min.png' %}"
+                                alt="Icon doc" class="img-fluid mr-2">Подробнее</a>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="news-not-photo p-3 p-sm-0 mb-5 mb-xl-4 d-sm-none d-lg-block">
+                        <div class="row mb-2">
+                            <div class="col"><span class="head-news font-text-thin text-size-14 text-primary">Новости
+                                    НАКС</span></div>
+                            <div class="col text-right"><span class="head-news font-text-thin text-size-14 text-muted">04
+                                    Июня 2018</span></div>
+                        </div>
+                        <p class="font-text-demi">Благодарность Территориального центра повышения квалификации
+                            Национального агентства развития квалификаций</p>
+                        <p class="font-text-thin text-size-14 d-none d-sm-block">Благодарность Территориального центра
+                            повышения квалификации Национального агентства развития квалификаций по Приволжскому
+                            федеральному округу государственного бюджетного...</p>
+                        <a href="#" target="_blank" class="btn btn-silver btn-sm"><img src="{% static 'img/img-icon-doc-min.png' %}"
+                                alt="Icon doc" class="img-fluid mr-2">Благодарность</a>
+                    </div>
+                    {% endif %}

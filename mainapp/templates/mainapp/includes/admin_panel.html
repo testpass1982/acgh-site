@@ -1,0 +1,33 @@
+{% comment %} this is admin panel {% endcomment %}
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="admin_panel row bg-light p-3">
+
+        <div class="col-5">
+            <form enctype="multipart/form-data" method="post" action="/import_profile/">
+                {% csrf_token %}
+
+                <div class="row align-items-center">
+                    <div class="col-lg-6">Загрузка профиля из файла
+                        {{ profile_import_form.file }}
+
+                        <div><a href="media/import_file_example.txt" download>Скачать</a> образец файла импорта</div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary btn-sm">Загрузить</button>
+                    </div>
+
+                </div>
+            </form>
+            {% comment %} <a href="#" class="btn btn-light btn-sm">Загрузить файл импорта</a>
+            <a href="#" class="btn btn-outline-light btn-sm">Пример файла</a> {% endcomment %}
+        </div>
+        <div class="offset-lg-4 col-lg-3 text-center">
+            <a class="btn btn-link btn-sm" target="_blank" href="/admin/"><i class="fas fa-user"></i>&nbsp;Админка
+                сайта</a>
+            <a class="btn btn-link btn-sm" href="/accounts/logout/"><i class="fas fa-sign-out-alt"> </i>&nbsp;Выйти</a>
+        </div>
+    </div>
+</div>
+{% endif %}

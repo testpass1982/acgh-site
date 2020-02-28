@@ -1,0 +1,52 @@
+        {% load static %}
+        <div class="box_header">
+            {% if user.is_authenticated %}
+
+
+                  <a href="#" id="toggle_panel" class="top-right-absolute btn btn-link" title="Скрыть/Показать панель администратора"><i class="fas fa-arrow-up"></i></a>
+
+
+            {% endif %}
+            <div class="row align-items-center">
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div class="logo_box_head">
+                        <a href="{% url 'index' %}">
+                            <img src="
+                            {% if profile.org_logotype %}
+                              {{ profile.org_logotype.url }}
+                            {% else %}
+                              https://place-hold.it/200x80
+                            {% endif %}
+                            " alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                    <div class="head_number">
+                      <a href="tel:{{profile.org_main_phone}}" class="number">{{profile.org_main_phone}}</a>
+                      <p class="consultant_text">
+                        {{ profile.org_address }}
+
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3 mb-lg-0">
+                    <div class="logo_box_free d-flex align-items-center justify-content-md-around justify-content-between">
+                      <img src="{% static '/img/logo_2.png' %}" class="logo_otstup"
+                        title="Лауреат Премии Правительства РФ в области качества 2012 года" alt="" alt="">
+                      <img src="{% static '/img/logo_3.png' %}" class="logo_otstup2"
+                        title="Лауреат Премии СНГ 2013 года за достижения в области качества" alt="" alt="">
+                      <img src="{% static '/img/logo_4.png' %}" class="logo_otstup" title="Член Международного Института Сварки"
+                        alt="" alt="">
+                      <img class="d-none d-sm-block" src="{% static '/img/sasp.png' %}"
+                        title="Организация допущена к выполнению работ по аттестации сварочного производства" alt="">
+                    </div>
+                  </div>
+                  <div class="col-lg-3 text-center">
+                    <a href="https://ac.naks.ru" target="_blank" class="btn btn-outline-primary" onclick="window.open('https://ac.naks.ru/')">Авторизация в ЭДО НАКС</a>
+                  </div>
+                  <div class="col-xl-1">
+                  </div>
+            </div>
+        </div>

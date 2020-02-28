@@ -1,0 +1,208 @@
+@import "_acgh-styles-common.scss";
+
+.header-home {
+    background-image: url(../../../../static_root/img/acgh-head-bcg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wrap-header-main {
+    background-color: rgba(0, 44, 65, 0.5);
+    font-size: 17px;
+
+    .top-header-line {
+        hr {
+            border-top: 2px solid #113146;
+            margin: 0;
+        }
+
+        form {
+            &:hover {
+                background-color: rgba(0, 44, 65, 0.6);
+                transition: 0.3s;
+            }
+        }
+
+        .form-control {
+            color: #fff;
+            padding: 1rem;
+            height: auto;
+            border-left: 2px solid #113146 !important;
+            border-radius: 0;
+            background-color: transparent;
+
+            &:focus {
+                border-color: $yellow;
+                box-shadow: 0 0 0 0.2rem rgba(255, 192, 3, 0.25);
+                ;
+            }
+
+        }
+
+        .input-group-append {
+            border-left: 2px solid #113146;
+            border-right: 2px solid #113146;
+
+
+            .btn-head-search {
+                padding: 1rem;
+                border-radius: 0;
+
+                &:focus {
+                    border-color: $yellow;
+                    box-shadow: 0 0 0 0.2rem rgba(255, 192, 3, 0.25);
+                    ;
+                }
+            }
+        }
+
+        .head-contact-left,
+        .head-contact-right {
+            padding: 1rem;
+
+            @media (max-width: 575px) {
+                padding: 0;
+                border-left: 0;
+            }
+        }
+
+        .head-contact-right {
+            border-left: 2px solid #113146;
+
+            @media (max-width: 575px) {
+                border-left: 0;
+            }
+        }
+    }
+
+    .btn-feedback {
+        color: #fff;
+        text-transform: uppercase;
+        background-color: rgba(0, 87, 144, 1);
+        padding: 1rem 2.5rem;
+        border-radius: 0;
+
+        &:hover {
+            background-color: rgba(0, 87, 144, 0.7);
+            transition: 0.3s;
+        }
+    }
+
+    .header-main {
+        text-transform: uppercase;
+
+        .navbar {
+            padding: 2rem 0;
+
+        }
+
+        .nav-item.active .nav-link {
+            font-weight: bold;
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-size: 17px;
+            // text-align: center;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                border-bottom: 1px solid #fff;
+                transition: 0.3s;
+            }
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: #fff;
+
+            &:hover {
+                color: &yellow;
+            }
+        }
+
+        .btn-outline-yellow {
+            color: $yellow;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 0;
+            padding: 1rem 2rem;
+            border: 2px solid $yellow;
+            text-transform: uppercase;
+
+            &:hover {
+                color: #002c44;
+                background-color: $yellow;
+                transition: 0.3s;
+            }
+        }
+    }
+}
+
+.header-slider {
+    background-color: rgba(0, 29, 43, 0.42);
+
+    .carousel {
+        height: 500px;
+        color: #fff;
+
+        .carousel-inner {
+            border-left: 4px solid $yellow;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-align: left;
+            color: #fff;
+
+            @media (max-width: 767px) {
+                font-size: 2rem;
+            }
+
+            @media (min-width: 768px) and (max-width: 1199px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        p,
+        a {
+            font-size: 20px;
+        }
+
+    }
+
+    .carousel-control {
+        position: absolute;
+        bottom: 0;
+
+        .control-prev,
+        .control-next {
+            padding: 1rem;
+
+            &:hover {
+                text-decoration: none;
+                background-color: rgba(0, 44, 65, 0.6);
+                transition: 0.3s;
+            }
+        }
+    }
+
+    // .btn-yellow {
+    //     color: #002c44;
+    //     font-size: 18px;
+    //     font-weight: 700;
+    //     border-radius: 0;
+    //     padding: 1rem 2rem;
+    //     border: 2px solid $yellow;
+    //     background-color: $yellow;
+    //     text-transform: uppercase;
+
+    //     &:hover {
+    //         color: $yellow;
+    //         background-color: transparent;
+    //         transition: 0.3s;
+    //     }
+    // }
+
+}

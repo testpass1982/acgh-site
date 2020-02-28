@@ -1,0 +1,36 @@
+@import "_header-box.scss";
+// @import "_menu-bg-info.scss";
+@import "_basement.scss";
+// @import "_modal-window.scss";
+@import "_legacy.scss";
+@import "_service_and_center.scss";
+@import "_partners.scss";
+@import "_doc.scss";
+@import "_contacts.scss";
+@import "_personal.scss";
+@import "_page_details.scss";
+@import "_sub-menu.scss";
+@import "_acgh-services-detail.scss";
+@import "_acgh-contacts.scss";
+
+.top-right-absolute {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+}
+
+.editable {
+    border: 1px dotted red;
+}
+
+.news-details-atteched-image {
+    padding: 10px;
+    max-width: 100%;
+    object-fit: contain;
+    flex: 1 0 33%;
+}
+
+.news-details-atteched-image:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}

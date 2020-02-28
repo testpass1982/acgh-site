@@ -1,0 +1,202 @@
+@import '_variables.scss';
+
+.info__block {
+    margin-bottom: 60px;
+}
+
+.section__header {
+    font-size: 30px;
+    font-weight: 200;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.line__section {
+    border-bottom: 1px solid #000;
+    margin-bottom: 50px;
+    width: 50px;
+}
+
+
+.ask__box {
+    padding: 35px;
+
+    background: #3c4e77;
+
+    @media screen and (max-width: 1199px) {
+        margin-bottom: 25px;
+    }
+
+}
+
+.ask__box:hover {
+    transform: scale(1.02, 1.02);
+    transition: 0.3s;
+    -webkit-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+    -moz-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+    box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+}
+
+.ask__text__header {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+
+}
+
+.ask__text__small {
+    font-size: 14px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.number__mail__ask__box {
+    font-size: 16px;
+    font-weight: 550;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.search__box__img {
+    background: url(/static_root/img/search__work.png) no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.search__box__img:hover {
+    transform: scale(1.02, 1.02);
+    transition: 0.3s;
+    -webkit-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+    -moz-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+    box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+}
+
+.search__work__box {
+    padding: 35px;
+
+    background: rgba(59, 77, 118, 0.8);
+
+    @media screen and (max-width: 1199px) {
+        margin-bottom: 25px;
+    }
+
+}
+
+.ask__text__header {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 500;
+
+}
+
+.search__text__header {
+    font-size: 22px;
+    color: #fff;
+}
+
+.search__text__header__two {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 38px;
+
+    @media screen and (max-width: 416px) {
+        display: none;
+    }
+}
+
+.button__search__work {
+    background-color: $neutralLight;
+    border-radius: 3px;
+    border: 2px solid $highlightLight;
+    padding: 20px;
+    color: $primaryDark;
+
+    @media screen and (max-width: 320px) {
+        float: left;
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 1199px) {
+        margin-bottom: 15px;
+    }
+
+}
+
+.adress__site_bw {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: -10px;
+    color: #fff;
+
+    @media screen and (max-width: 320px) {
+        margin-top: 10px;
+    }
+}
+
+
+.button__place__a__job {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.button__place__a__job:hover {
+    color: #fff;
+    margin-left: 5px;
+    transition: 0.2s;
+}
+
+.journal__box__img {
+    background: url(/static_root/img/journal__img.png) no-repeat;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.journal__box__img:hover {
+    transform: scale(1.02, 1.02);
+    transition: 0.3s;
+    -webkit-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+    -moz-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+    box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.75);
+}
+
+.journal__box {
+    padding: 35px;
+
+    background: rgba(59, 77, 118, 0.8);
+
+    @media screen and (max-width: 1199px) {
+        margin-bottom: 25px;
+    }
+
+}
+
+.journal__img__header {
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.journal__text {
+    font-size: 14px;
+    color: #fff;
+    margin-top: 16px;
+}
+
+.button__svarka {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.button__svarka:hover {
+    color: #fff;
+    margin-left: 5px;
+    transition: 0.2s;
+}
+
+
+
+
+
+

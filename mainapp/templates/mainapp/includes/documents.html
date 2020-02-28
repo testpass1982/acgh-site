@@ -1,0 +1,35 @@
+{% load static %}
+{% if documents %}
+    {% for item in documents %}
+    <div class="doc p-3 p-sm-4 mb-4">
+        <p class="font-text-medium text-size-14 mb-3 mb-xl-4">
+            {% for tag in item.tags.all %}
+            <i class="far fa-file">&nbsp;</i>{{ tag.name }}
+            {% endfor %}
+        </p>
+        <div class="row align-items-center">
+            <div class="col-2"><img src="{% static 'img/img-icon-doc.png' %}" alt="Icon doc" class="img-fluid"></div>
+            <div class="col"><a href="{{ item.document.url }}" class="d-block font-text-thin text-size-14" target="_blank">
+            {{ item.title }}</a></div>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+Демо документы
+<div class="doc p-3 p-sm-4 mb-4">
+    <p class="font-text-medium text-size-14 mb-3 mb-xl-4">Руководящие документы</p>
+    <div class="row align-items-center">
+        <div class="col-2"><img src="{% static 'img/img-icon-doc.png' %}" alt="Icon doc" class="img-fluid"></div>
+        <div class="col"><a href="#" class="d-block font-text-thin text-size-14" target="_blank">Перечень
+                групп технических устройств опасных производственных объектов</a></div>
+    </div>
+</div>
+<div class="doc p-3 p-sm-4 mb-4">
+    <p class="font-text-medium text-size-14 mb-3 mb-xl-4">Руководящие документы</p>
+    <div class="row align-items-center">
+        <div class="col-2"><img src="{% static 'img/img-icon-doc.png' %}" alt="Icon doc" class="img-fluid"></div>
+        <div class="col"><a href="#" class="d-block font-text-thin text-size-14" target="_blank">Перечень
+                групп технических устройств опасных производственных объектов</a></div>
+    </div>
+</div>
+{% endif %}

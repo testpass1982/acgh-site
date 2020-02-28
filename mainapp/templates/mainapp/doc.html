@@ -1,0 +1,59 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg_header_inner_page" id="page_top">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="headline_bg_inner_page">
+          Документы
+        </div>
+        <button class="back_to_home_page">
+          <a href="{% url 'index' %}" class="link_to_home_page">
+            <img src="{% static 'img/back_to_page.png' %}" class="img_back_to_page" alt="">На главную
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box_content_in_pages">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-6">
+        <p class="headline_doc">Список документов</p>
+        <p class="doc_name_list">Наименование документов - категория </p>
+      </div>
+    </div>
+    <div class="box_document">
+      <div class="row">
+        <div class="col-xl-7">
+        {% for category in categories %}
+        <div class="headline_doc_section">{{ category.name }}</div>
+            {% for doc in docs %}
+            {% comment %} {{ doc.title }} {{ doc.category }} {{category.name }}
+            {{ doc.document }} {% endcomment %}
+              {% comment %} {% if doc.category == category.name %} {% endcomment %}
+              {% if doc.category == category %}
+                <div class="col-sm-7 col-12">
+                  <a href="{{ doc.document.url }}" download="">
+                    <div class="box_doc_file" title="Скачать">
+                      <div class="{% if doc.extension == '.doc' %}icon_word{% else %}icon_pdf{% endif %}"></div>
+                      <p class="doc_text_name">
+                        {{ doc.title }}
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              {% comment %} {% endif %} {% endcomment %}
+            {% endif %}
+            {% endfor %}
+          <div class="line_center"></div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

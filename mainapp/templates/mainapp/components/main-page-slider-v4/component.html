@@ -1,0 +1,105 @@
+{% load static %}{% load link_holders %}
+{% comment %} <div class="background"> {% endcomment %}
+  {% comment %} {% include 'mainapp/includes/menu-bg-header.html' %} {% endcomment %}
+  <div class="bg_color">
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="10000">
+          <div class="bg_carousel_content_one" {% if slide_background %}style="background: url({{ slide_background.image.large.url }}); background-size:cover;"{% endif %}>
+            <div class="bg_carousel_content_color">
+              <div class="container">
+                <div class="slider__box_head_bg">
+                  <div class="row">
+                    <div class="offset-xl-2 col-xl-8">
+                      <p class="headline_bg_content">
+                        Аттестационный центр НАКС
+                      </p>
+                      <p class="slide_text">
+                        Деятельность {{ profile.org_short_name|safe }} направлена на обеспечение качества
+                        сварочного производства технических устройств опасных производственных объектов, требования к
+                        которым
+                        установлены нормативными документами Ростехнадзора и Системы аттестации сварочного производства
+                        (САСв).
+                      </p>
+                      <div class="head_bg_box_button">
+                        <button class="service">
+                          <a class="service_button" href="" data-toggle="modal" data-target="#modal-statement" class="request_button">Подать
+                            заявку</a>
+                        </button>
+
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <div class="bg_carousel_content_two">
+            <div class="bg_carousel_content_color">
+              <div class="container">
+                <div class="slider__box_head_bg">
+                  <div class="row">
+                    <div class="offset-xl-2 col-xl-8">
+                      <p class="headline_bg_content">
+                        Неразрушающий и разрушающий контроль
+                      </p>
+                      <p class="slide_text">
+                        {{ profile.org_short_name }} выполняет работы по неразрушающему контролю
+                        технических устройств, зданий и сооружений, применяемых и (или) эксплуатируемых на опасных
+                        производственных объектах, при осуществлении деятельности в области промышленной безопасности.
+                      </p>
+                      <div class="head_bg_box_button">
+                        <button class="service">
+                          <a href="{% link_holder 'LAB' %}" class="service_button">{% title_holder 'LAB' %}</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item" data-interval="3000">
+          <div class="bg_carousel_content_three">
+            <div class="bg_carousel_content_color">
+              <div class="container">
+                <div class="slider__box_head_bg">
+                  <div class="row">
+                    <div class="offset-xl-2 col-xl-8">
+                      <p class="headline_bg_content">
+                        МВЦ НАКС
+                      </p>
+                      <p class="slide_text">
+                        Межотраслевой Высокотехнологичный Центр НАКС» - активно развивающаяся Компания, созданная для
+                        предоставления услуг по оценке соответствия в области сварочного производства, а также
+                        проведения работ по обязательной и добровольной сертификации продукции в России и за рубежом.
+                      </p>
+                      <div class="head_bg_box_button">
+                        <button class="service">
+                          <a href="{% link_holder 'CENTER_MVC' %}" class="service_button">{% title_holder 'CENTER_MVC' %}</a>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <!-- Конец меню -->

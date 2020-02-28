@@ -1,0 +1,25 @@
+{% extends 'mainapp/base_trimmed.html' %}
+{% block content %}
+<div class="container p-2">{% if not errors %}
+    <div class="alert alert-success">
+        Профиль успешно загружен {{ profile.org_short_name }}
+    </div>
+    <div class="text text-info">
+        <strong>Сайт обновлен следующими данными:</strong> {{ profile_dict }}
+    </div>
+    {% else %}
+    <div class="alert alert-warning">
+        Ошибки загрузки: {{ errors }}
+    </div>
+    {% endif %}
+</div>
+<p>
+    <a class="btn btn-link" href="{% url 'index' %}">Вернуться на главную</a>
+</p>
+<p>
+    <a class="btn btn-link" href="/admin/">В админку сайта</a>
+</p>
+<p>
+    <a class="btn btn-link" href="/admin/mainapp/profile/">В рездел админки "Профили организации"</a>
+</p>
+{% endblock content %}

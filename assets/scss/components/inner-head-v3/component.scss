@@ -1,0 +1,39 @@
+@import '_variables.scss';
+
+.header-logo {
+    border: 1px dotted gray;
+}
+.btn-outline-white {
+	background-color: transparent;
+	font-size: 0.875rem;
+	color: #fff;
+	border-color: #fff;
+}
+.btn-outline-white:hover {
+	color: #000;
+	background-color: #fff;
+	border-color: #fff;
+}
+.btn-blue {
+	font-size: 0.875rem;
+	color: $highlight;
+	background-color: $primaryDark;
+	border-color: $primaryDark;
+}
+.btn-blue:hover {
+	color: $highlightLight;
+	background-color: $primaryLight;
+	border-color: $primaryLight;
+}
+
+
+.btn-outline-blue {
+	font-size: 0.875rem;
+	color: $primary;
+	border-color: $primary;
+}
+.btn-outline-blue:hover {
+	color: $highlightLight;
+	background-color: $primary;
+	border-color: $primary;
+}

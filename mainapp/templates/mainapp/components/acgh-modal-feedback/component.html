@@ -1,0 +1,51 @@
+{% load link_holders %}{% load static %}
+<div class="modal acgh-modal-feedback fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Обратная связь</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                </button>
+            </div>
+            <form class="form-feedback">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="inputName">Ваше имя</label>
+                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+                        <!-- <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPhone">Телефон</label>
+                        <input type="tel" class="form-control" id="inputPhone">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="textareaQuestion">Ваш вопрос</label>
+                        <textarea class="form-control" id="textareaQuestion" rows="3"></textarea>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="checkboxPolitika" required>
+                        <label class="form-check-label" for="checkboxPolitika">Я ознакомлен с <a href="#" class="text-yellow" target="_blank">Политикой обработки персональных данных</a></label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Изменить на type="submit" !!! -->
+                    <button type="button" id="sendQuestion" class="btn btn-primary">Отправить</button>
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Закрыть</button>
+                </div>
+            </form>
+            <div class="confirmation-sending" style="display: none;">
+                <div class="modal-body">
+                    <p>Ваш вопрос отправлен. Наши специалисты свяжутся с Вами в ближайшее время.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

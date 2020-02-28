@@ -1,0 +1,14 @@
+{% load link_holders %}
+<nav role='navigation'>
+  <ul>
+    <li><a href="{% url 'index' %}">Главная</a></li>
+    <li><a href="{% link_holder 'CENTER_INFO' %}">{% title_holder 'CENTER_INFO' %}</a>
+      <ul>
+        <li><a href="{% link_holder 'SERVICES' %}">{% title_holder 'SERVICES' %}</a></li>
+        <li><a href="{% link_holder 'OBLD' %}">{% title_holder 'OBLD' %}</a></li>
+      </ul>
+    </li>
+    <li><a href="{% url 'doc' %}">Документы</a></li>
+    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,120 @@
+{% load staticfiles %}{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    {% block css %}
+    <!-- BOOTS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'scss/style.scss' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    {% if site.font_url %}
+    {{ site.font_url|safe }}
+    {% else %}
+    <link rel="stylesheet" href="{% static 'fonts/font.css' %}">
+    {% endif %}
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+    <!-- components scss files -->
+    {% block compontents_css %}
+    {% if site.components|length >= 1 %}
+    {% for c in site.components %}
+    <link rel="stylesheet" href="{% sass_src c.component.relative_scss_path %}">
+    {% endfor %}
+    {% endif %}
+    {% endblock %}
+    <!-- components scss files -->
+    <link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+    {% comment %} TODO: Заменить style!!! {% endcomment %}
+    <!-- {% if site.font_family %}
+    <style>
+        body {
+            font-family: {{site.font_family}}, sans-serif;
+        }
+    </style>
+    {% endif %} -->
+    <style>
+    body {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 1rem;
+    }
+    </style>
+    <!-- HEADER -->
+</head>
+
+<body>
+    <!-- Include Modal -->
+    {% include 'mainapp/includes/modal-window.html' %}
+    <!-- End Include Modal -->
+    <!-- {% include 'mainapp/includes/admin_panel.html' %} -->
+    <!--include components order by number in admin panel -->
+    <!-- Include main-banner on main page -->
+    {% if request.resolver_match.url_name == 'index' %}
+    {% for site_comp in site.components %}
+    {% if site_comp.component.component_type in 'main_menu main_page_content advertising_block modal' %}
+    {% include site_comp %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% if request.resolver_match.url_name != 'index' %}
+    {% for site_comp in site.components %}
+    {% if site_comp.component.component_type in 'inner_head modal' %}
+    {% include site_comp %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% comment %} {% if request.resolver_match.url_name == 'inner' %}
+    {% for site_comp in site.components %}
+    {% if site_comp.component.component_type in 'inner_head modal' %}
+    {% include site_comp %}
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endcomment %}
+    {% block content %}
+    {% endblock content %}
+    {% if partners|length > 1 %}
+    {% include 'mainapp/includes/partners.html' %}
+    {% endif %}
+    {% for site_comp in site.components %}
+    {% if site_comp.component.component_type in 'footer modal'%}
+    {% include site_comp %}
+    {% endif %}
+    {% endfor %}
+    <!-- Include Modal -->
+    <!-- {% include 'mainapp/includes/basement.html' %} -->
+    <!-- End Include Modal -->
+    <!-- Include main-banner on main page -->
+    <script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/acgh-script.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/jquery.maskedinput.js' %}"></script>
+    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.counterup.js' %}"></script>
+    <!--components js files -->
+    {% if site.components|length >= 1 %}
+    {% for c in site.components %}
+    {% if c.component.js_path %}
+    <script src="{% static c.component.relative_js_path %}"></script>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    <!--components js files -->
+    <script src="{% static 'owlcarousel/owl.carousel.min.js' %}"></script>
+</body>
+
+</html>

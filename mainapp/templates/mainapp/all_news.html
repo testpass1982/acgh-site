@@ -1,0 +1,54 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="bg_header_inner_page" id="page_top">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="headline_bg_inner_page">
+                   Список новостей
+                </div>
+                <p class="subtitle_inner_page_text">
+                    События нашей организации
+                </p>
+                <button class="back_to_home_page">
+                    <a href="{% url 'index' %}" class="link_to_home_page">
+                        <img src="{% static 'img/back_to_page.png' %}" class="img_back_to_page" alt="">На главную
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box_content_in_pages">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-xl-1">
+            </div>
+            <div class="col-xl-9">
+                <div class="row">
+                    {% for post in news %}
+                    <div class="col-xl-4">
+                        <div class="link__read__news__inside">
+                            <div class="block__news">
+                                <a href="{% url 'index' %}#head__page" class="link__news"></a>
+                                    <p class="data__news__main">{{ post.published_date|date:"d M. Y"}}</p>
+                                <div class="box__news mt-1">
+                                    <p class="box__news__text">
+                                        {{ post.title|truncatechars:55 }}</p>
+                                </div>
+                                </a> </a>
+                                <button class="read_news mt-2">
+                                    <a href="{% url 'details_news' post.pk %}" class="read_news_text">Читать</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+    </div>
+</div>
+    </div>
+</div>
+
+{% endblock content %}

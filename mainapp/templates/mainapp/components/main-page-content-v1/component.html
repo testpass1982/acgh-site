@@ -1,0 +1,68 @@
+{% load link_holders %}
+{% load static %}
+<div class="box_content_service_and_center p-3">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-xl-4 px-3">
+                <div class="headline_box_content">
+                    <p class="headline_name_box">
+                        Услуги
+                    </p>
+                    <p class="head_box_content_small_text {% if user.is_authenticated %}editable{% endif %}">
+                        Основные направления {{ profile.org_short_name }}
+                    </p>
+                </div>
+                <div class="block_service">
+                        <ul class="list_link">
+
+
+                           {% for service in all_services %}
+                            <li class="service_link">
+                                <a class="{% if user.is_authenticated %}editable{% endif %}" href="{% url 'service_details' service.pk %}">{{ service.title }}</a>
+                            </li>
+                           {% endfor %}
+
+
+                        </ul>
+                </div>
+            </div>
+            <div class="col-xl-7 pl-4">
+                <div class="headline_box_content">
+                    <p class="headline_name_box">
+                        Об организации
+                    </p>
+                    <p class="head_box_content_small_text {% if user.is_authenticated %}editable{% endif %}">{{ profile.org_short_name }}</p>
+                </div>
+                <div class="box_content_center">
+                    <p class="content_center_text {% if user.is_authenticated %}editable{% endif %}">
+                        {{ profile.org_history }}
+                    </p>
+                    <button class="center_podrobnee">
+                        <a href="{% link_holder 'CENTER_INFO' %}"
+                            class="center_podrobnee_link {% if user.is_authenticated %}editable{% endif %}">{% title_holder 'CENTER_INFO' %}</a>
+
+                    </button>
+                </div>
+                <div class="box_img_center">
+                    <p class="imglist" style="max-width: 1000px;">
+
+                    {% for photo in center_photos %}
+
+                      <a href="{{ photo.image.url }}" data-fancybox="images"
+                        data-caption="{{ photo.title }}">
+                        <img src="{{ photo.image.url }}" class="img-fluid img_center mr-2 {% if user.is_authenticated %}editable{% endif %}" />
+                      </a>
+
+                    {% endfor %}
+
+
+                    </p>
+
+                  </div>
+            </div>
+        </div>
+
+    </div>
+</div>

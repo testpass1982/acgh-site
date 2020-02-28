@@ -1,0 +1,192 @@
+@import '_variables.scss';
+.box_content_services {
+    background-color: rgba($highlightLight, 0.3);
+    padding: 85px 0px 85px;
+    @media screen and (max-width: 1200px) {
+        padding: 45px 15px 45px;
+       }
+}
+
+.box_headline_include{
+    padding: 0px 0px 35px;
+}
+
+.oragne_left_line {
+    border-left: 4px solid $highlight;
+    height: 47px;
+}
+
+.headline_box_text {
+    font-size: 32px;
+    font-weight: 400;
+    color: $primaryDark;
+    padding: 0px 15px 0px;
+    p {
+        font-size: 14px;
+        a{
+            color: $primaryLight;
+            text-decoration: underline;
+        }
+    }
+}
+
+.box_services{
+    padding: 0px 0px 45px;
+    @media screen and (max-width: 992px) {
+       padding: 0px 0px 45px;
+    }
+}
+
+.box_img_service {
+    background: url(/static_root/img/img_services.png) no-repeat;
+    background-size: cover;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.block_services {
+    background-color: rgba($primaryDark, 0.5);
+    padding: 100px 30px 100px;
+
+    &:hover {
+        background-color: rgba($primaryLight, 0.4);
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+        -ms-transition: 0.3s;
+        -o-transition: 0.3s;
+    }
+
+    @media screen and (max-width: 1200px) {
+        padding: 120px 25px 65px;
+    }
+}
+
+.name_service {
+    color: $highlight;
+    width: 350px;
+    font-size: 28px;
+    font-weight: 550;
+    padding: 0px 0px 25px;
+    @media screen and (max-width: 1200px) {
+       font-size: 24px;
+    }
+    @media screen and (max-width: 576px) {
+       font-size: 18px;
+       width: 100%;
+    }
+}
+
+.line_service_yellow {
+    border: 3px solid $background;
+    width: 50%;
+
+    @media screen and (max-width: 435px) {
+        width: 50%;
+    }
+}
+
+.box_text_for_services {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 450;
+    color: $backgroundDark;
+    padding: 25px 20px;
+    @media screen and (max-width: 992px) {
+        font-size: 14px;
+    }
+}
+
+.more_services {
+    padding: 0px 20px;
+    background-color: transparent;
+    border: none;
+
+    a {
+        padding: 12px 35px;
+        border: 1px solid $primary;
+        color: $primaryDark;
+        font-weight: 450;
+        text-decoration: none;
+        font-size: 16px;
+
+        &:hover {
+           background-color: $primaryLight;
+           border: 1px solid $primaryLight;
+            color: #fff;
+            transition: 0.2s;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -ms-transition: 0.2s;
+            -o-transition: 0.2s;
+        }
+    }
+}
+
+.block_news{
+    position: relative;
+    min-height: 150px;
+    @media screen and (max-width: 1200px) {
+        padding: 15px 0px 15px;
+       }
+}
+
+.headline_name_news{
+    font-size: 18px;
+    font-weight: 650;
+    line-height: 1.8;
+    padding: 0px 0px 5px;
+}
+
+.text_for_news{
+    font-size: 16px;
+    font-weight: 400;
+    color: $primary;
+    line-height: 1.6;
+    padding: 10px 0px 25px;
+}
+
+.more_news {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    align-self: baseline;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    a {
+        padding: 7px 20px;
+        border: 1px solid $primaryLight;
+        color: #131313;
+        font-weight: 450;
+        text-decoration: none;
+        font-size: 14px;
+        &:hover {
+            background-color: $primary;
+            border: 1px solid $primary;
+            color: $highlight;
+            transition: 0.2s;
+            -webkit-transition: 0.2s;
+            -moz-transition: 0.2s;
+            -ms-transition: 0.2s;
+            -o-transition: 0.2s;
+        }
+
+    }
+}
+
+.headline_all_news a{
+    font-size: 14px;
+    font-weight: 400;
+    color: $primaryDark;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+

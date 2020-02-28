@@ -1,0 +1,61 @@
+{% load link_holders %}
+{% load static %}
+<div class="box_content_include">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="headline_box_content">
+                    <p class="headline_name_box">
+                        О Компании
+                    </p>
+                    <p class="head_box_content_small_text">
+                        {{ profile.org_short_name }}
+                    </p>
+                </div>
+                <div class="box_content_center">
+                    <p class="content_center_text">
+                        {{ profile.org_history }}
+                    </p>
+                    <p class="content_center_text important_text">
+                        В штате {{ profile.org_short_name }} работают квалифицированные опытные инженеры
+                        и специалисты. Все процедуры аттестации регистрируются в реестре Национального Агентства Контроля Сварки.
+                    </p>
+                    <button class="center_podrobnee">
+                        <a href="{% link_holder 'CENTER_INFO' %}" class="center_podrobnee_link">
+                            {% title_holder 'CENTER_INFO' %}
+                        </a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-1"></div>
+            <div class="col-xl-6">
+                <div class="headline_box_content">
+                    <p class="headline_name_box">
+                        Услуги центра
+                    </p>
+                    <p class="head_box_content_small_text">
+                        Вы можете подробнее ознакомиться с основными направлениями деятельности нашей организации
+                    </p>
+                </div>
+                <div class="block_service">
+                    <div class="service_link">
+                        <ul class="list_link">
+
+                            {% for service in all_services %}
+                            <li>
+                                <div class="d-flex justify-content-between">
+                                <a  href="{% url 'service_details' service.pk %}">{{ service.title }}&nbsp;</a>
+                                </div>
+                                <hr>
+                            </li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

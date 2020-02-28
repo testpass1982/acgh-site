@@ -1,0 +1,31 @@
+@import "_acgh-styles-common.scss";
+
+.acgh-modal-feedback {
+    .modal-content {
+        border-radius: 0;
+    }
+
+    .modal-header {
+        text-transform: uppercase;
+        color: #002c41;
+        border-bottom-color: $yellow;
+    }
+
+    .modal-footer {
+        border-top-color: $yellow;
+    }
+
+    .form-control {
+        border-radius: 0;
+
+        &:focus {
+            border-color: $yellow;
+            box-shadow: 0 0 0 0.2rem rgba(255, 192, 3, 0.25);
+        }
+    }
+
+    .close {
+        color: #002c41;
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,49 @@
+{% load link_holders %}
+<div class="sider_bar_service_pages">
+    <div class="box_doc_right_column">
+        <p class="headline_side_panel">
+            Аттестация проводится в соответствии с:
+        </p>
+        <a data-info="RD_613" href="{% doc_holder 'RD_613' %}" class="trebovanie__list">
+            <p>
+                • {% doc_title 'RD_613' %}</p>
+        </a>
+        <div class="line_side_panel"></div>
+    </div>
+    <div class="box_doc_right_column">
+
+        <a href="{% doc_holder 'ZAYAVKA_SM' %}" class="trebovanie__list">
+            <p>{% doc_title 'ZAYAVKA_SM' %}</p>
+        </a>
+        <div class="line_side_panel"></div>
+    </div>
+    <div class="box_right_column_service">
+        <p class="headline_side_panel">
+            Другие услуги:
+        </p>
+
+        <div class="list__service__column">
+                <ul class="side_panel_list_link">
+                        <li>
+                                <a  href="{% link_holder 'ATCSM' %}" class="side_panel_right_column_text">{% title_holder 'ATCSM' %}</a>
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATCSO' %}" class="side_panel_right_column_text">{% title_holder 'ATCSO' %}</a>
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATCSP' %}" class="side_panel_right_column_text">{% title_holder 'ATCSP' %}</a>
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATCST' %}" class="side_panel_right_column_text">{% title_holder 'ATCST' %}</a>
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'MVC' %}" class="side_panel_right_column_text">{% title_holder 'MVC' %}</a>
+                            </li>
+                            <li>
+                                <a  href="{% link_holder 'ATTSM' %}" class="side_panel_right_column_text">{% title_holder 'ATTSM' %}</a>
+                            </li>
+                    </ul>
+        </div>
+
+    </div>
+</div>

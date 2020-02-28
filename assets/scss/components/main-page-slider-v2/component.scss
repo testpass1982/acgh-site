@@ -1,0 +1,89 @@
+@import '_variables.scss';
+
+.headline_bg_content {
+    font-size: 32px;
+    font-weight: 450;
+    color: $secondary;
+    line-height: 1.6;
+
+    @media screen and (max-width: 992px) {
+        font-size: 18px;
+    }
+}
+
+.head_bg_box_button {
+
+    @media screen and (max-width: 992px) {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
+
+.head_bg_text_small_two {
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.8;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 992px) {
+        font-size: 16px;
+    }
+}
+
+.bg_color {
+        text-align: center;
+        background-color: rgba($highlight, 0.7);
+        padding: 85px;
+        @media screen and (max-width: 576px) {
+            padding: 25px;
+            text-align: center;
+        }
+    }
+
+.request_button {
+    background-color: $primary;
+    border: none;
+    padding: 12px 50px;
+    text-decoration: none;
+
+    @media screen and (max-width: 1079px) {
+        padding: 12px 20px;
+    }
+
+    &:hover {
+        background-color: $primaryLight;
+        transition: 0.2s;
+        color: #fff;
+    }
+}
+
+.headline_bg_content {
+    font-size: 32px;
+    font-weight: 450;
+    color: $primary;
+    line-height: 1.6;
+
+    @media screen and (max-width: 992px) {
+        font-size: 18px;
+    }
+}
+
+.head_bg_text_small_two {
+    font-size: 18px;
+    font-weight: 300;
+    color: $primary;
+    line-height: 1.8;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    @media screen and (max-width: 992px) {
+        font-size: 16px;
+    }
+}
+
+.bg_image {
+    background: url(/static_root/img/bg_center.png) no-repeat;
+    background-size: cover;
+}

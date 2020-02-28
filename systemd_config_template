@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=USERNAME
+Group=www-data
+WorkingDirectory=/home/USERNAME/PROJECT_NAME
+ExecStart=/home/USERNAME/django2/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/USERNAME/PROJECT_NAME/ac_site.sock ac_site.wsgi
+
+[Install]
+WantedBy=multi-user.target

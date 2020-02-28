@@ -1,0 +1,80 @@
+@import '_variables.scss';
+
+// $primaryLight: #7b405c;
+// $secondary: #3e6990;
+// $primary: #381d2a;
+// $secondaryDark: #1f3549;
+// $secondaryLight: #729cc2;
+// $neutralDark: #789053;
+// $neutralLight: #dae2cd;
+// $highlightLight: #fbdccb;
+// $background: #e9e3b4;
+// $neutral: #aabd8c;
+// $backgroundLight: #ffffff;
+// $primaryDark: #000000;
+// $highlightDark: #e75c13;
+// $backgroundDark: #d2c665;
+// $highlight: #f39b6d;
+
+.centered {
+    text-align: center;
+}
+
+.primary_colored {
+    color: $primary;
+}
+
+.primaryLight_colored {
+    color: $primaryLight;
+}
+
+.primaryDark_colored {
+    color: $primaryDark;
+}
+
+.secondary_colored {
+    color: $secondary;
+}
+
+.secondaryLight_colored {
+    color: $secondaryLight;
+}
+
+.secondaryDark_colored {
+    color: $secondaryDark;
+}
+
+.neutral_colored {
+    color: $neutral;
+}
+
+.neutralLight_colored {
+    color: $neutralLight;
+}
+
+.neutralDark_colored {
+    color: $neutralDark;
+}
+
+.bg_neutralLight_colored {
+    background-color: $neutralLight;
+}
+
+.bolded {
+    font-weight: bold;
+}
+
+.centers_bg {
+    margin: 10px 0px 10px;
+    border: dashed 1px $primary;
+    background-color: rgba($highlightLight, .5);
+    transition: background-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
+    border-radius: 5px;
+    &:hover {
+        background-color: rgba($highlightLight, .8);
+        -webkit-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.5);
+        -moz-box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.5);
+        box-shadow: 9px 9px 13px -8px rgba($primaryDark, 0.5);
+    }
+}

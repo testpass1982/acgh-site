@@ -1,0 +1,67 @@
+@import '_variables.scss';
+
+.head_box_content_small_text {
+    font-size: 18px;
+    color: $primaryDark;
+  }
+
+.content_center_text {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    color: $primaryDark;
+  }
+
+  .center_podrobnee {
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    margin-top: 10px;
+
+    a {
+      border: 1px solid $secondary;
+      padding: 12px 25px;
+      text-decoration: none;
+      color: $primaryDark;
+      font-size: 16px;
+
+      &:hover {
+        background-color: $highlight;
+        transition: 0.3s;
+        color: $primary;
+      }
+    }
+  }
+
+  .list_link li::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    margin-top: 10px;
+    // margin-left: 30px;
+    background: url(/static/img/arrow_punkt.png) center 0 no-repeat;
+  }
+
+  .list_link {
+    list-style: none;
+    padding: 0px;
+  }
+
+  .list_link li {
+    margin-bottom: 15px;
+    padding: 0px 25px;
+  }
+
+  .service_link a {
+    color: $primaryDark;
+    font-size: 20px;
+    text-decoration: none;
+
+    &:hover {
+      color: $highlight;
+      transition: 0.3s;
+    }
+  }
+

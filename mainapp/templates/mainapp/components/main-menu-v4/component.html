@@ -1,0 +1,21 @@
+{% load link_holders %}
+<div class="row">
+    <div class="offset-lg-5 col-lg-7">
+
+            <nav>
+              <ul class="main_menu">
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li class="dropdown_custom"><a href="{% link_holder 'CENTER_INFO' %}">{% title_holder 'CENTER_INFO' %}</a>
+                 <div class="dropdown-custom-content">
+                    {% for service in all_services %}
+                    <a href="{% url 'service_details' service.pk %}">{{ service.title }}</a>
+                    {% endfor %}
+                  </div>
+                </li>
+                <li><a href="{% url 'doc' %}">Документы</a></li>
+                <li><a href="{% url 'contacts' %}">Контакты</a></li>
+              </ul>
+            </nav>
+
+    </div>
+</div>

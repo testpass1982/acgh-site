@@ -1,0 +1,31 @@
+@import '_variables.scss';
+
+.menu__background {
+    background-color: $secondaryLight;
+    padding: 20px 0px 20px 0px;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    // border-radius: 7px;
+    @media screen and (max-width: 992px) {
+        padding: 15px 0px;
+        margin-bottom: 0px;
+    }
+
+}
+
+.menu__navbar {
+    text-align: right;
+}
+
+.navbar {
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+
+.menu__navbar .navbar .nav-item .nav-link {
+    padding: 0;
+    color: $primaryDark;
+    font-weight: 300;
+}

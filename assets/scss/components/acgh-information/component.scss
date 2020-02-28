@@ -1,0 +1,30 @@
+@import "_acgh-styles-common.scss";
+
+.information {
+    .card {
+        border-radius: 0;
+
+        .card-img {
+            border-radius: 0;
+        }
+
+        .card-img-overlay {
+            top: auto;
+
+            .card-overlay-text {
+                border-left: 4px solid $yellow;
+            }
+
+            .card-title {
+                font-weight: 700;
+                color: #fff;
+            }
+
+            a {
+                font-size: 20px;
+            }
+        }
+    }
+
+
+}

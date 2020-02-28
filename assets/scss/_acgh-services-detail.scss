@@ -1,0 +1,69 @@
+@import "_acgh-styles-common.scss";
+
+.services-detail {
+    h3 {
+        font-size: 23px;
+        font-weight: 700;
+        color: #002c41;
+    }
+
+    .block-yellow {
+        position: relative;
+        background-color: #fea901;
+
+        .block-yellow-content {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+
+            @media (min-width: 600px) and (max-width: 991px) {
+                left: 15%;
+
+            }
+
+            @media (max-width: 599px) {
+                left: 20%;
+            }
+        }
+
+        img {
+            @media (max-width: 1200px) {
+                width: 90px;
+            }
+        }
+
+        h3 {
+            line-height: 30px;
+
+            @media (max-width: 991px) {
+                font-size: 17px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+.actyvity {
+    background-color: #f3f3f3;
+    border-left: 4px solid $yellow;
+
+    .activity-text-bold {
+        font-weight: 700;
+        color: #002c41;
+    }
+}
+
+.link-doc {
+    color: #002c41;
+    font-weight: 700;
+
+    &:hover {
+        color: #002c41;
+        transition: 0.3s;
+        opacity: 0.7;
+    }
+}
+
+.img-container img {
+    width: 100%;
+}

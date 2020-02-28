@@ -1,0 +1,22 @@
+server {
+     listen 80;
+     server_name DOMAIN_NAME;
+     location = /favicon.ico { access_log off; log_not_found off; }
+     location /static_root/ {
+         root /home/USERNAME/PROJECT_NAME;
+     }
+     location /static/admin {
+         root /home/USERNAME/django2/lib/python3.5/site-packages/django/contrib/admin/;
+     }
+
+     location /media/ {
+         root /home/USERNAME/PROJECT_NAME;
+     }
+
+     location / {
+         include proxy_params;
+         proxy_pass http://unix:/home/USERNAME/PROJECT_NAME/ac_site.sock;
+     }
+    client_max_body_size 10M;
+
+}

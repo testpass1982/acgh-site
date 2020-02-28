@@ -1,0 +1,69 @@
+{% load link_holders %}
+<div class="bg_info_box">
+    <div class="container p-1">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-xl-4">
+                <div class="info_box_text">
+                    {{ profile.org_short_name }} является членом <br>
+                    Саморегулируемой организации Ассоциация «НАКС».
+                    <div class="naks_link">
+                        <a href="http://www.naks.ru" target="_blank"
+                            title="Национальное Агентство Контроля Сварки">www.naks.ru</a>
+                        <a href="http://spks.naks.ru/news/" class="spks_link" target="_blank"
+                            title="Совет по профессиональным квалификациям в области сварки">www.spks.naks.ru</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="info_box_standarti">
+                    <a href="{% url 'profstandarti' %}" class="profstandarti_link">
+                        Профстандарты в области сварки
+                    </a>
+                    <p class="info_box_text_small">
+                        Утверждённые профессиональные стандарты
+                    </p>
+                </div>
+            </div>
+            <div class="col-xl-4">
+                <div class="shifr_headline">
+                    Шифры аттестационного центра
+
+                    <div class="shifr_link">
+                        {% if profile.org_acsp_code %}
+                        <a href="{{profile.org_acsp_reestr_link}}">
+                            {{ profile.org_acsp_code }}</a>
+                        {% endif %}
+
+                        {% if profile.org_csp_code %}
+                        <a href="{{profile.org_csp_reestr_link}}">
+                            {{ profile.org_csp_code}}</a>
+                        {% endif %}
+
+                        {% if profile.org_acsm_code %}
+                        <a href="{{profile.org_acsm_reestr_link}}">
+                            {{profile.org_acsm_code}}</a>
+                        {% endif %}
+
+                        {% if profile.org_acso_code %}
+                        <a href="{{profile.org_acso_reestr_link}}">
+                            {{profile.org_acso_code}}</a>
+                        {% endif %}
+
+                        {% if profile.org_acst_code %}
+                        <a href="{{profile.org_acst_reestr_link}}">
+                            {{profile.org_acst_code}}</a>
+                        {% endif %}
+                        {% if profile.org_cok_code %}
+                        <a href="{{profile.org_cok_reestr_link}}">
+                            {{profile.org_cok_code}}</a>
+                        {% endif %}
+                        {% if profile.add_ap_list %}
+                        <a class="profstandarti_link" href="{% link_holder 'AP_LIST' %}">
+                            {% title_holder 'AP_LIST' %}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

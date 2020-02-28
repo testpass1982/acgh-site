@@ -1,0 +1,121 @@
+    {% load static %}
+
+
+    <div class="container p-3">
+      {% if site_comp.parameters.work_time %}
+      <div class="row align-items-center"{% if site_comp.parameters.bgc %} style="background-color:#{{site_comp.parameters.bgc}}"{% endif %}>
+        <div class="col-xs-12 col-lg-4">
+          <div class="head__text__adres">
+            <img src="{% static 'img/geo_icon_transparent.png' %}" style="width:20px;" alt=""> {{ profile.org_address|safe }}
+            <p class="adres__on__map">
+              <a href="{% url 'contacts' %}#contacts_">На карте</a>
+            </p>
+          </div>
+
+
+        </div>
+        <div class="col-xs-12 col-lg-4">
+          <div class="text-lg">
+                  <p class="h5 text-center text-info">
+                                          {{ site_comp.parameters.work_time }}
+                  </p>
+
+          </div>
+
+
+        </div>
+        <div class="col-xs-12 col-lg-4">
+          <div class="head__text__numbercok__two d-inline-block float-right">
+            {{ profile.org_short_name }} в реестрах НАКС:
+            <div class="dropdown d-inline-block">
+              <button class="list__acst__center dropdown-toggle" title="Выбрать центр" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Открыть
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% if profile.org_acsp_code %}
+                <a class="dropdown-item" href="{{profile.org_acsp_reestr_link}}">
+                  {{ profile.org_acsp_code }}</a>
+                {% endif %}
+
+                {% if profile.org_csp_code %}
+                <a class="dropdown-item" href="{{profile.org_csp_reestr_link}}">
+                  {{ profile.org_csp_code}}</a>
+                {% endif %}
+
+                {% if profile.org_acsm_code %}
+                <a class="dropdown-item" href="{{profile.org_acsm_reestr_link}}">
+                  {{profile.org_acsm_code}}</a>
+                {% endif %}
+
+                {% if profile.org_acso_code %}
+                <a class="dropdown-item" href="{{profile.org_acso_reestr_link}}">
+                  {{profile.org_acso_code}}</a>
+                {% endif %}
+
+                {% if profile.org_acst_code %}
+                <a class="dropdown-item" href="{{profile.org_acst_reestr_link}}">
+                  {{profile.org_acst_code}}</a>
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {% else %}
+
+      <div class="row align-items-center">
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+          <div class="head__text__adres">
+            <img src="{% static 'img/geo_icon_transparent.png' %}" style="width:20px;" alt=""> {{ profile.org_address|safe }}
+            <p class="adres__on__map">
+              <a href="{% url 'contacts' %}#contacts_">На карте</a>
+            </p>
+          </div>
+
+
+        </div>
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+          <div class="head__text__numbercok__two d-inline-block float-right">
+            {{ profile.org_short_name }} в реестрах НАКС:
+            <div class="dropdown d-inline-block">
+              <button class="list__acst__center dropdown-toggle" title="Выбрать центр" type="button"
+                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Открыть
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                {% if profile.org_acsp_code %}
+                <a class="dropdown-item" href="{{profile.org_acsp_reestr_link}}">
+                  {{ profile.org_acsp_code }}</a>
+                {% endif %}
+
+                {% if profile.org_csp_code %}
+                <a class="dropdown-item" href="{{profile.org_csp_reestr_link}}">
+                  {{ profile.org_csp_code}}</a>
+                {% endif %}
+
+                {% if profile.org_acsm_code %}
+                <a class="dropdown-item" href="{{profile.org_acsm_reestr_link}}">
+                  {{profile.org_acsm_code}}</a>
+                {% endif %}
+
+                {% if profile.org_acso_code %}
+                <a class="dropdown-item" href="{{profile.org_acso_reestr_link}}">
+                  {{profile.org_acso_code}}</a>
+                {% endif %}
+
+                {% if profile.org_acst_code %}
+                <a class="dropdown-item" href="{{profile.org_acst_reestr_link}}">
+                  {{profile.org_acst_code}}</a>
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {% endif %}
+    </div>

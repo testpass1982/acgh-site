@@ -1,0 +1,32 @@
+{% load static %}
+<div class="box_content_include">
+    <div class="container">
+            <div class="row">
+                    <div class="col-xl-12">
+                    {% if attestats %}
+                        <div class="head_box_content">
+                            <p class="headline_name_box">
+                               Разрешительные документы {{ profile.org_short_name }}
+                            </p>
+                            </div>
+                    {% endif %}
+                    </div>
+                </div>
+
+        <div class="row align-items-center">
+            <div id="owl" class="owl-carousel owl-theme">
+
+                {% for att in attestats %}
+                <div class="img-item img-fluid">
+                <a href="{{ att.image.url }}" data-fancybox="images" data-caption="{{ att.title }}">
+                        <img src="{{ att.image.url }}" alt="{{ att.title }}">
+                </a>
+                        <h4>{{ att.title }}</h3>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+</div>
