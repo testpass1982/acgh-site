@@ -8,7 +8,7 @@ from django.utils import timezone
 from django.shortcuts import get_object_or_404
 
 
-data_url = 'http://ac.naks.ru/curl/json.php?url=reestr_personal&token=NtdRAUoEtsiwrew73UWyASw0wsYa&type=personal&valentin=Y'
+data_url = 'http://ac.naks.ru/curl/json.php?url=reestr_personal&token=NtdRAUoEtsiwrew73UWyASw0wsYa&type=personal&popov=Y'
 
 
 def date_parse(string):

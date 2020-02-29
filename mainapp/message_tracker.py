@@ -1,6 +1,6 @@
 """
 File: message_tracker.py
-Email: valentin.anatoly@gmail.com
+Email: popov.anatoly@gmail.com
 Description: message tracker will track all messages
 an send notifications via sms and email
 """

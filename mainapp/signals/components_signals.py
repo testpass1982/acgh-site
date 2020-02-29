@@ -75,7 +75,7 @@ def update_styles_on_component_save(sender, instance, **kwargs):
             delete_all_css_files()
             request = RequestFactory()
             factory_response = index(request.get('/'))
-            collectstatic = subprocess.Popen(["/home/valentin/django2/bin/python3", "manage.py", "collectstatic", "--ignore=*.scss", "--noinput"])
+            collectstatic = subprocess.Popen(["/home/popov/django2/bin/python3", "manage.py", "collectstatic", "--ignore=*.scss", "--noinput"])
             collectstatic.wait()
         except Exception as e:
             print("COMPONENT EXCEPTION", e)
@@ -99,8 +99,8 @@ def update_styles_on_component_save(sender, instance, **kwargs):
 
 @receiver(post_save, sender=ColorScheme)
 def update_configuration_colors(sender, instance, **kwargs):
-    # /home/valentin/acgh-site/assets/scss/components/helper-block-v1/component.scss
-    # /home/valentin/acgh-site/static/scss/component.scss
+    # /home/popov/acgh-site/assets/scss/components/helper-block-v1/component.scss
+    # /home/popov/acgh-site/static/scss/component.scss
     if instance.configuration:
         other_schemes = ColorScheme.objects.all().exclude(pk=instance.pk)
         for scheme in other_schemes:
@@ -116,7 +116,7 @@ def update_configuration_colors(sender, instance, **kwargs):
                 delete_all_css_files()
                 request = RequestFactory()
                 factory_response = index(request.get('/'))
-                collectstatic = subprocess.Popen(["/home/valentin/django2/bin/python3", "manage.py", "collectstatic", "--ignore=*.scss", "--noinput"])
+                collectstatic = subprocess.Popen(["/home/popov/django2/bin/python3", "manage.py", "collectstatic", "--ignore=*.scss", "--noinput"])
                 collectstatic.wait()
             except Exception as e:
                 print('COLORSCHEME EXCEPTION', e)
@@ -132,7 +132,7 @@ def update_configuration_colors(sender, instance, **kwargs):
         # for r, d, f in os.walk(assets_path):
         #     for file in f:
         #         if file in ['component.css', 'component.css.map', 'style.css', 'style.css.map']:
-        #             # /home/valentin/acgh-site/static_root/scss/components/info-block-v1/component.css
+        #             # /home/popov/acgh-site/static_root/scss/components/info-block-v1/component.css
         #             src_path = os.path.join(r, file)
         #             dst_path = src_path.replace('assets', 'static_root')
         #             if os.path.isfile(dst_path):

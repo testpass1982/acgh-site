@@ -265,6 +265,10 @@ class OrderServiceAdmin(admin.ModelAdmin):
 class StaffAdmin(admin.ModelAdmin):
     list_display = ['name', 'job', 'priority']
 
+@admin.register(Advert)
+class AdvertAdmin(admin.ModelAdmin):
+    list_display = ['title', 'number']
+
 admin.site.register(Partner)
 admin.site.register(SlideBackgrounds)
 admin.site.register(Font)

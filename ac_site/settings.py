@@ -284,11 +284,11 @@ DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = True
 #####################################
 ### SEND_MAIL_SETTINGS ##############
 #####################################
-#/home/valentin/send_mail_secret.json
+#/home/popov/send_mail_secret.json
 
 home = str(Path.home())
 # import pdb; pdb.set_trace()
-# with open(os.path.join('/', 'home', 'valentin', 'send_mail_secret.json'), 'r') as f:
+# with open(os.path.join('/', 'home', 'popov', 'send_mail_secret.json'), 'r') as f:
 with open(os.path.join(home, 'send_mail_secret.json'), 'r') as f:
     json_email_settings = f.read()
     email_settings = json.loads(json_email_settings)

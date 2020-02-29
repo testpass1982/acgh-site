@@ -1,0 +1,16 @@
+{% load link_holders %}
+{% comment %} <p class="h5">{{ adv.title }}</p> {% endcomment %}
+<div class="carousel-item ml-3 ml-sm-4 ml-xl-5{% if forloop.counter0 == 0 %} active{% endif %}" data-position="{{ forloop.counter }}">
+                        <div class="row align-items-center">
+                            <div class="col-lg-5 col-xl-5">
+                                <h1>{{ adv.title|safe }}</h1>
+                                <p class="news-content">{{ adv.text|safe }}</p>
+                                <div class="mb-3">
+                                    <a href="{% if adv.url %}{{ adv.url }}{% elif adv.url_code %}{% link_holder adv.url_code %}{% endif %}"
+                                            class="text-yellow mr-2">{% if adv.url %}{{ adv.url_text }}{% elif adv.url_code %}{% title_holder adv.url_code %}{% endif %}
+                                                </a>
+                                    {% comment %} <a href="#" class="text-yellow">spks.naks.ru</a> {% endcomment %}
+                                </div>
+                            </div>
+                        </div>
+</div>

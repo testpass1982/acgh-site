@@ -44,7 +44,7 @@ def accept_order(request):
         if form.is_valid():
             instance = form.save()
             current_absolute_url = request.build_absolute_uri()
-            email_address_arr = ['valentin.anatoly@gmail.com']
+            email_address_arr = ['popov.anatoly@gmail.com']
             order_arr = []
 
             for key in order_compound.keys():
@@ -55,7 +55,7 @@ def accept_order(request):
                 if Profile.objects.first() is not None:
                     admin_email_address = Profile.objects.first().org_order_email.split(" ")
                 else:
-                    admin_email_address = 'valentin@naks.ru'
+                    admin_email_address = 'popov@naks.ru'
                 email_address_arr += admin_email_address
             # 4seconds economy to send_email every time i make tests
             if not instance.name == 'tolik_make_tests':
@@ -107,16 +107,18 @@ def index(request):
         pictured_posts[post] = PostPhoto.objects.filter(post__pk=post.pk).first()
 
     content = {
+        # 'center_photos': CenterPhotos.objects.all().order_by('number'),
+        # 'partners': Partner.objects.all().order_by('number'),
+        # 'pictured_posts': pictured_posts,
+        # 'not_pictured_posts': Post.objects.filter(publish_in_basement=True),
+        # 'documents': Document.objects.filter(publish_on_main_page=True).order_by('-created_date'),
+        # 'articles': Article.objects.filter(publish_on_main_page=True).order_by('-created_date'),
+        # 'slide_background': SlideBackgrounds.objects.filter(activated=True).first(),
         'title': title,
-        'center_photos': CenterPhotos.objects.all().order_by('number'),
-        'partners': Partner.objects.all().order_by('number'),
-        'component_name': 'VASYA',
-        'pictured_posts': pictured_posts,
-        'not_pictured_posts': Post.objects.filter(publish_in_basement=True),
-        'documents': Document.objects.filter(publish_on_main_page=True).order_by('-created_date'),
-        'articles': Article.objects.filter(publish_on_main_page=True).order_by('-created_date'),
-        'slide_background': SlideBackgrounds.objects.filter(activated=True).first(),
+        'services': "services",
+        'adverts': Advert.objects.all().order_by('number') if Advert.objects.count() else None
     }
+    # import pdb; pdb.set_trace()
     # main-page-slider-v1
     configuration = SiteConfiguration.objects.first()
     activated_components = Component.objects.filter(configuration=configuration)

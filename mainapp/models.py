@@ -610,7 +610,7 @@ class OrderService(models.Model):
 class SlideBackgrounds(models.Model):
     title = models.CharField(
         u'Название',
-        default='Слайдер_{}'.format(timezone.now()),
+        default='Слайдер_{}'.format(timezone.now),
         max_length=50
     )
     image = StdImageField(
@@ -629,3 +629,20 @@ class SlideBackgrounds(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Advert(models.Model):
+    title = models.CharField(u'Заголовок', max_length=100)
+    text = models.TextField(u'Текст объявления', max_length=200)
+    url_code = models.CharField(u'Код ссылки (для привязки к странице сайта)', max_length=20, blank=True, null=True)
+    url = models.URLField(u'Ссылка (для ссылки на другой сайт)', blank=True, null=True)
+    url_text = models.CharField(u'Текст для ссылки', max_length=100, blank=True, null=True)
+    number = models.IntegerField(u'Сорировка', default=500)
+
+    class Meta:
+        verbose_name = 'Объявление'
+        verbose_name_plural = 'Объявления'
+
+    def __str__(self):
+        return self.title
+

@@ -17,14 +17,14 @@
                     <div class="col-sm text-center no-gutters">
                         <div class="head-contact-left">
                             <img src="{% static '/img/acgh-mail-icon.png' %}" class="mr-1" alt="icon">
-                            <a href="mailto:ac-mosgaz@yandex.ru" class="text-white">ac-mosgaz@yandex.ru</a>
+                            <a href="mailto:{{ profile.org_email }}" class="text-white">{{ profile.org_email }}</a>
                         </div>
                     </div>
                     <div class="col-sm text-center no-gutters">
                         <div class="head-contact-right">
                             <img src="{% static '/img/acgh-phone-icon.png' %}" class="mr-1" alt="icon">
-                            <a href="tel:+79256011400" class="text-yellow">+7 (925) 601-14-00</a>
-                            <span class="d-inline-block d-md-none d-xl-inline-block text-white ml-2">г.&nbsp;Москва</span>
+                            <a href="tel:+79256011400" class="text-yellow">{{ profile.org_main_phone }}</a>
+                            <span class="d-inline-block d-md-none d-xl-inline-block text-white ml-2">г.&nbsp;Москва <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="{{ profile.org_address }}"></i></span>
                         </div>
                     </div>
                     <div class="col-xl-2 d-none d-xl-block">
@@ -69,23 +69,16 @@
         <div class="container">
             <div id="hederSliderHome" class="carousel slide" data-interval="false">
                 <div class="carousel-inner">
-                    <div class="carousel-item ml-3 ml-sm-4 ml-xl-5 active">
-                        <div class="row align-items-center">
-                            <div class="col-lg-5 col-xl-5">
-                                <h1>Аттестационный<br>центр ООО “АЦГХ”</h1>
-                                <p class="news-content">ООО «АЦГХ» является членом Саморегулируемой организации Ассоциация «НАКС»</p>
-                                <div class="mb-3">
-                                    <a href="#" class="text-yellow mr-2">naks.ru</a>
-                                    <a href="#" class="text-yellow">spks.naks.ru</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                {% if adverts %}
+                    {% for adv in adverts %}
+                        {% include 'mainapp/includes/adverts.html' %}
+                    {% endfor %}
+                {% else %}
                     <div class="carousel-item ml-3 ml-sm-4 ml-xl-5">
                         <div class="row align-items-center">
                             <div class="col-lg-5 col-xl-5">
                                 <h1>Аттестационный<br>центр ООО “АЦГХ”</h1>
-                                <p class="news-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse natus soluta, culpa porro harum. Corporis delectus, qui suscipit minima ad animi esse at id ea!</p>
+                                <p class="news-content">ООО «АЦГХ» является членом Саморегулируемой организации Ассоциация «НАКС»</p>
                                 <div class="mb-3">
                                     <a href="#" class="text-yellow mr-2">naks.ru</a>
                                     <a href="#" class="text-yellow">spks.naks.ru</a>
@@ -104,6 +97,7 @@
                             </div>
                         </div>
                     </div>
+                {% endif %}
                 </div>
                 <div class="carousel-control text-center mx-auto">
                     <button class="btn-yellow d-sm-block mb-5 mx-sm-auto">Подать заявку онлайн</button>
@@ -112,8 +106,8 @@
                             <img src="{% static '/img/acgh-arrow-left-icon.png' %}" alt="arrow-icon">
                         </a>&nbsp;
                         <div class="d-inline-block mx-3 mx-sm-5">
-                            <span class="text-yellow" style="font-size: 35px;">01/</span>
-                            <span class="text-white" style="font-size: 20px;">03</span>
+                            <span id="current_advert" class="text-yellow" style="font-size: 35px;"></span>
+                            <span class="text-white" style="font-size: 20px;">0{{ adverts|length }}</span>
                         </div>&nbsp;
                         <a href="#hederSliderHome" class="control-next" role="button" data-slide="next">
                             <img src="{% static '/img/acgh-arrow-right-icon.png' %}" alt="arrow-icon">

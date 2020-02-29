@@ -16,7 +16,7 @@ from django.contrib.auth.models import User
 
 # from model_mommy.recipe import Recipe, foreign_key, seq
 # clean Users
-User.objects.all().exclude(username='valentin').delete()
+User.objects.all().exclude(username='popov').delete()
 # clean upload folder
 if os.path.isdir(os.path.join(settings.BASE_DIR, 'media', 'upload')):
     folder = os.path.join(settings.BASE_DIR, 'media', 'upload')
@@ -305,7 +305,7 @@ class Command(BaseCommand):
 
         mixer.cycle(3).blend(
                 Article,
-                author=User.objects.get(username='valentin'),
+                author=User.objects.get(username='popov'),
                 publish_on_main_page=True
                 )
         for i in range(0, len(images)):
@@ -320,7 +320,7 @@ class Command(BaseCommand):
                 publish_on_main_page=True,
                 publish_on_news_page=True,
                 published_date=timezone.now(),
-                author=User.objects.get(username='valentin')
+                author=User.objects.get(username='popov')
                 )
             PostPhoto.objects.create(
                 title='{}'.format(images[i]),

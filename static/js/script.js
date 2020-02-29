@@ -1,4 +1,34 @@
 // Кнопка поиска
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
+
+
+window.onload = function () {
+  let current = 1;
+  $("#current_advert").html(`0${current}/`);
+
+  $(".control-next").click(function(){
+    if (current < $(".carousel-item").length) {
+      ++current;
+    } else {
+      current = 1;
+    }
+    $("#current_advert").html(`0${current}/`);
+    });
+    $(".control-prev").click(function(){
+      if (current == 1) {
+        current = $(".carousel-item").length;
+      } else {
+        --current;
+      }
+      $("#current_advert").html(`0${current}/`);
+      });
+};
+
+
+
 
 $(document).ready(function() {
 

@@ -75,21 +75,21 @@ class SiteTest(TestCase):
             "relative_scss_path": "scss/components/main-menu-v1/component.scss",
             "title": "main-menu-v1",
             "component_type": "main_menu",
-            "html_path": "/home/valentin/{}/mainapp/templates/mainapp/components/main-menu-v1/component.html".format(cls.project_name),
+            "html_path": "/home/popov/{}/mainapp/templates/mainapp/components/main-menu-v1/component.html".format(cls.project_name),
             "relative_js_path": "js/main-menu-v1/",
             "js_path": "",
             "relative_html_path":
             "mainapp/components/main-menu-v1/component.html",
             "code": "main-menu-v1",
-            "scss_path": "/home/valentin/{}/assets/scss/components/main-menu-v1/component.scss".format(cls.project_name)
+            "scss_path": "/home/popov/{}/assets/scss/components/main-menu-v1/component.scss".format(cls.project_name)
         }
         component_data.update({'configuration': cls.site_configuration})
         slider_component_data = {
             "relative_html_path": "mainapp/components/main-page-slider-v1/component.html",
             "relative_scss_path": "scss/components/main-page-slider-v1/component.scss",
             "relative_js_path": "js/main-page-slider-v1/",
-            "scss_path": "/home/valentin/{}/assets/scss/components/main-page-slider-v1/component.scss".format(cls.project_name),
-            "html_path": "/home/valentin/{}/mainapp/templates/mainapp/components/main-page-slider-v1/component.html".format(cls.project_name),
+            "scss_path": "/home/popov/{}/assets/scss/components/main-page-slider-v1/component.scss".format(cls.project_name),
+            "html_path": "/home/popov/{}/mainapp/templates/mainapp/components/main-page-slider-v1/component.html".format(cls.project_name),
             "code": "main-page-slider-v1",
             "js_path": "",
             "component_type": "main_banner",
@@ -100,11 +100,11 @@ class SiteTest(TestCase):
         cls.component = Component.objects.create(**component_data)
 
         cls.post_form_component_data = {
-                "html_path": "/home/valentin/{}/mainapp/templates/mainapp/components/main-page-slider-v3/component.html".format(cls.project_name),
+                "html_path": "/home/popov/{}/mainapp/templates/mainapp/components/main-page-slider-v3/component.html".format(cls.project_name),
                 "relative_js_path": "js/main-page-slider-v3/",
                 "component_type": "main_banner",
                 "title": "main-page-slider-v3",
-                "scss_path": "/home/valentin/{}/assets/scss/components/main-page-slider-v3/component.scss".format(cls.project_name),
+                "scss_path": "/home/popov/{}/assets/scss/components/main-page-slider-v3/component.scss".format(cls.project_name),
                 "js_path": "",
                 "code": "main-page-slider-v3",
                 "relative_html_path": "mainapp/components/main-page-slider-v3/component.html",
@@ -271,8 +271,8 @@ class SiteTest(TestCase):
     @measure_time
     def test_can_upload_photos_and_publish_them(self):
         component_data = {
-            "html_path": "/home/valentin/{}/mainapp/templates/mainapp/components/main-page-content-v1/component.html".format(self.project_name),
-            "scss_path": "/home/valentin/{}/assets/scss/components/main-page-content-v1/component.scss", "relative_scss_path": "scss/components/main-page-content-v1/component.scss".format(self.project_name),
+            "html_path": "/home/popov/{}/mainapp/templates/mainapp/components/main-page-content-v1/component.html".format(self.project_name),
+            "scss_path": "/home/popov/{}/assets/scss/components/main-page-content-v1/component.scss", "relative_scss_path": "scss/components/main-page-content-v1/component.scss".format(self.project_name),
             "title": "main-page-content-v1",
             "relative_js_path": "js/main-page-content-v1/",
             "code": "main-page-content-v1",
