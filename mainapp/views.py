@@ -77,45 +77,20 @@ def accept_order(request):
 def index(request):
     title = 'Главная страница'
     """this is mainpage view with forms handler and adapter to messages"""
-    # tracker = MessageTracker()
-    if request.method == 'POST':
-        request_to_dict = dict(zip(request.POST.keys(), request.POST.values()))
-        form_select = {
-            'send_message_button': SendMessageForm,
-            'subscribe_button': SubscribeForm,
-            'ask_question': AskQuestionForm,
-        }
-        for key in form_select.keys():
-            if key in request_to_dict:
-                print('got you!', key)
-                form_class = form_select[key]
-        form = form_class(request_to_dict)
-        if form.is_valid():
 
-            # saving form data to messages (need to be cleaned in future)
-            adapted_data = MessageModelAdapter(request_to_dict)
-            adapted_data.save_to_message()
-            print('adapted data saved to database')
-            tracker.check_messages()
-            tracker.notify_observers()
-        else:
-            raise ValidationError('form not valid')
+    services = []
 
-    pictured_posts = {}
-    main_page_posts = Post.objects.filter(publish_on_main_page=True).order_by('published_date')[:3]
-    for post in main_page_posts:
-        pictured_posts[post] = PostPhoto.objects.filter(post__pk=post.pk).first()
+    for service_category in ServiceCategory.objects.all().order_by('number'):
+        services.append({
+            "pseudo": service_category.pseudo,
+            "name": service_category.name,
+            "services": Service.objects.filter(category=service_category).order_by("number")
+        })
 
     content = {
-        # 'center_photos': CenterPhotos.objects.all().order_by('number'),
-        # 'partners': Partner.objects.all().order_by('number'),
-        # 'pictured_posts': pictured_posts,
-        # 'not_pictured_posts': Post.objects.filter(publish_in_basement=True),
-        # 'documents': Document.objects.filter(publish_on_main_page=True).order_by('-created_date'),
-        # 'articles': Article.objects.filter(publish_on_main_page=True).order_by('-created_date'),
-        # 'slide_background': SlideBackgrounds.objects.filter(activated=True).first(),
         'title': title,
-        'services': "services",
+        'categories': ServiceCategory.objects.all().order_by('number'),
+        'services': services,
         'adverts': Advert.objects.all().order_by('number') if Advert.objects.count() else None
     }
     # import pdb; pdb.set_trace()

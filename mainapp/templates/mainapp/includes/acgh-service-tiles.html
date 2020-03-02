@@ -1,0 +1,29 @@
+{% load static %}
+            <div class="tab-pane fade show {% if forloop.counter0 == 0 %}active{% endif %}" id="pills-{{ cat.pseudo }}" role="tabpanel" aria-labelledby="pills-{{ cat.pseudo }}-tab">
+                <div class="row">
+                    {% if cat.services %}
+                        {% for service in cat.services %}
+                        <div class="col-lg-6">
+                            <div class="card mb-3">
+                                <div class="row no-gutters">
+                                    <div class="col-md-6">
+                                        <img src="{% if service.bg_photo %}{{ service.bg_photo.url }}{% endif %}" class="card-img" alt="{{ service.title }}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <h3 class="card-title my-2 my-xl-4">{{ service.title }}</h3>
+                                            <p class="card-text text-secondary">{{ service.short_description }}</p>
+                                        </div>
+                                        <div class="card-footer py-2 py-xl-3">
+                                            <a href="{% url 'service_details' service.pk %}" class="btn-details">Подробнее<img src="{% static '/img/acgh-arrow-details.png' %}" class="ml-2" alt="arrow-icon"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        {{ cat.name }}
+                    {% endif %}
+                </div>
+            </div>

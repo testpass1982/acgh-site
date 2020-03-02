@@ -7,27 +7,27 @@
             </div>
             <div class="col-sm-6 col-lg-2 col-xl-3 text-center text-sm-right text-lg-left">
                 <div class="footer-nav">
-                    <a class="d-lg-block mb-2 px-1" href="#">Главная</a>
+                    <a class="d-lg-block mb-2 px-1" href="{% url 'index' %}">Главная</a>
                     <span class="vertical-line d-inline-block d-lg-none"></span>
-                    <a class="d-lg-block mb-2 px-1" href="#">О компании</a>
+                    <a class="d-lg-block mb-2 px-1" href="{% link_holder 'ABOUT_US' %}">{% title_holder 'ABOUT_US' %}</a>
                     <span class="vertical-line d-inline-block d-lg-none"></span>
-                    <a class="d-lg-block mb-2 px-1" href="#">Услуги</a>
+                    <a class="d-lg-block mb-2 px-1" href="{% url 'index' %}#services_h1">Услуги</a>
                     <span class="vertical-line d-inline-block d-lg-none"></span>
-                    <a class="d-lg-block px-1" href="#">Контакты</a>
+                    <a class="d-lg-block px-1" href="{% url 'contacts' %}">Контакты</a>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 col-xl-3 text-center text-sm-left my-4 my-sm-0">
                 <div class="mb-2">
                     <img src="{% static '/img/acgh-phone-icon.png' %}" class="mr-2" alt="">
-                    <a href="tel:+79256011400" class="text-yellow mr-2">+7(925)601-14-00</a>
+                    <a href="tel:+79256011400" class="text-yellow mr-2">{{ profile.org_main_phone }}</a>
                 </div>
                 <div class="mb-2">
                     <img src="{% static '/img/acgh-mail-icon.png' %}" class="mr-2" alt="">
-                    <a href="mailto:ac-mosgaz@yandex.ru" class="text-white">ac-mosgaz@yandex.ru</a>
+                    <a href="mailto:ac-mosgaz@yandex.ru" class="text-white">{{ profile.org_email }}</a>
                 </div>
                 <div>
                     <img src="{% static '/img/acgh-time-icon.png' %}" class="mr-2" alt="">
-                    <span>Время работы с 10.00 до 17.00</span>
+                    <span>{{ profile.org_work_time }}</span>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 col-xl-3 text-center text-sm-right">
@@ -42,7 +42,7 @@
         <div class="row justify-content-between">
             <div class="col-sm-6 order-2 order-sm-1 text-center text-sm-left">© 2019 Все права защищены</div>
             <div class="col-sm-6 order-1 order-sm-2 text-center text-sm-right">
-                <a href="#" class="text-yellow" target="_blank">Политика обработки персональных данных</a>
+                <a href="{% link_holder 'POLITICS' %}" class="text-yellow" target="_blank">{% title_holder 'POLITICS' %}</a>
             </div>
         </div>
     </div>

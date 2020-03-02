@@ -42,25 +42,7 @@
                         <!-- <span class="navbar-toggler-icon"></span> -->
                         <i class="fa fa-bars fa-2x"></i>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">Главная <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">О&nbsp;компании</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">Услуги</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link mr-lg-4 mr-xl-5" href="#">Контакты</a>
-                            </li>
-                        </ul>
-                        <div class="d-inline-block">
-                            <button class="btn btn-lg btn-outline-yellow ml-auto" type="button" onclick="window.open('https://ac.naks.ru/')">Авторизация в ЭДО НАКС</button>
-                        </div>
-                    </div>
+                    {% include 'mainapp/includes/acgh-menu.html' %}
                 </nav>
             </div>
         </div>

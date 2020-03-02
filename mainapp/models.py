@@ -45,6 +45,22 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+class ServiceCategory(models.Model):
+    """category model class"""
+    name = models.CharField(u'Название', max_length=64)
+    pseudo = models.CharField(u'Псевдоним', max_length=32)
+    number = models.SmallIntegerField(u'Порядок вывода', default=500)
+
+    class Meta:
+        verbose_name = "Категория услуг"
+        verbose_name_plural = "Категории услуг"
+
+    def __str__(self):
+        return self.name
+
+    def __unicode__(self):
+        return self.name
+
 
 class ContentMixin(models.Model):
     '''base class for Post, Article and Documents'''
@@ -341,12 +357,13 @@ class Service(models.Model):
             будет создан пункт меню в разделе "Услуги", в котором они
             сортируются в соответствии с порядком сортировки
         """)
-    short_description = models.CharField(u'Краткое описание услуги', max_length=200, blank=True, null=True, default=None)
+    short_description = models.TextField(u'Краткое описание услуги', max_length=500, blank=True, null=True, default=None)
     html = RichTextUploadingField(u'Описание услуги')
     number = models.SmallIntegerField(u'Порядок сортировки', blank=True, null=True, default=None)
     bg_photo = models.ImageField(u'Картинка для главной', upload_to="upload/", null=True, blank=True, default=None)
     documents = models.ManyToManyField(Document, blank=True)
     parent = models.ForeignKey('self', blank=True, null=True, on_delete=models.CASCADE)
+    category = models.ForeignKey(ServiceCategory, null=True, blank=True, on_delete=models.SET_NULL)
     disable_order_button = models.BooleanField(u'Отключить кнопку подачи заявки', default=False)
 
 
@@ -368,7 +385,7 @@ class Profile(models.Model):
     org_intro = models.TextField(u'Текст для главной страницы', blank=True, null=True, default=None)
     org_history = models.TextField(u'История организаици', blank=True, null=True, default=None)
     # phone1 for header
-    org_main_phone = models.CharField(u'Главный телефон организации (используется в хедере)', max_length=30, blank=True, null=True, default=None)
+    org_main_phone = models.CharField(u'Главный телефон организации (используется в хедере)', max_length=100, blank=True, null=True, default=None)
     org_main_phone_text = models.CharField(u'Подпись под телефоном в хедере, например "Многоканальный"', max_length=30, blank=True, null=True, default=None)
     # phone2 for header
     org_secondary_phone = models.CharField(u'Второй телефон организации (используется в хедере)', max_length=30, blank=True, null=True, default=None)
@@ -380,6 +397,7 @@ class Profile(models.Model):
     org_header_phones = models.TextField(u'Телефоны (для хедера)', blank=True, null=True, default=None)
     org_address = models.TextField(u'Адрес местоположения организации', null=True, blank=True, default=None)
     org_address_map_link = models.CharField(u'Ссылка на карту', blank=True, null=True, default=None, max_length=500)
+    org_ur_address = models.TextField(u'Юридический адрес', null=True, blank=True, default=None)
     org_work_time = models.CharField(u'Время работы организации', null=True, blank=True, default=None, max_length=100)
     org_csp_code = models.CharField(u'шифр ЦСП (необязательно)', max_length=20, null=True, blank=True)
     org_csp_reestr_link = models.URLField(u'Ссылка на реестр ЦСП', blank=True, null=True)
@@ -610,7 +628,7 @@ class OrderService(models.Model):
 class SlideBackgrounds(models.Model):
     title = models.CharField(
         u'Название',
-        default='Слайдер_{}'.format(timezone.now),
+        default='Слайдер',
         max_length=50
     )
     image = StdImageField(

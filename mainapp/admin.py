@@ -219,7 +219,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ['title', 'number', 'parent']
+    list_display = ['title', 'number', 'parent', 'category']
 
 from django.db import models
 from django.forms import TextInput
@@ -268,6 +268,10 @@ class StaffAdmin(admin.ModelAdmin):
 @admin.register(Advert)
 class AdvertAdmin(admin.ModelAdmin):
     list_display = ['title', 'number']
+
+@admin.register(ServiceCategory)
+class ServiceCategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'pseudo', 'number']
 
 admin.site.register(Partner)
 admin.site.register(SlideBackgrounds)

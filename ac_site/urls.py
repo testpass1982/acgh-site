@@ -34,7 +34,7 @@ urlpatterns = [
     path('service_details/<slug:pk>', mainapp.service_details, name='service_details'),
     path('cok/', mainapp.cok, name='cok'),
     path('profstandarti/', mainapp.profstandarti, name='profstandarti'),
-    path('contacts/', mainapp.contacts, name='contacts'),
+    # path('contacts/', mainapp.contacts, name='contacts'),
     path('import_profile/', mainapp.import_profile, name='import_proflie'),
     path(
         'detailview/<slug:content>/<slug:pk>',
@@ -45,7 +45,7 @@ urlpatterns = [
     path('accept_order/', mainapp.accept_order, name="accept_order"),
     path('captcha/', include('captcha.urls')),
     path('inner/', mainapp.inner, name="inner"),
-    path('acgh-contacts/', mainapp.acgh_contacts, name="acgh_contacts"),
+    path('contacts/', mainapp.acgh_contacts, name="contacts"),
 ]
 
 if settings.DEBUG:

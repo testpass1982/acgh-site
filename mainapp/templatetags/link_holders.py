@@ -20,7 +20,7 @@ def title_holder(url_code):
         post = Post.objects.get(url_code=url_code)
         title = post.title
     except Post.DoesNotExist:
-        title = 'Страница еще не создана ({})'.format(url_code)
+        title = '({})'.format(url_code)
     return title
 
 @register.simple_tag

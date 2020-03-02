@@ -1,9 +1,7 @@
-// Кнопка поиска
+
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
-
-
 
 window.onload = function () {
   let current = 1;
