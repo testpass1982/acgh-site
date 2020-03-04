@@ -8,44 +8,57 @@
                     <span aria-hidden="true"><i class="fa fa-times"></i></span>
                 </button>
             </div>
-            <form class="form-feedback">
+            <form id="acgh-order-form" class="form-feedback">
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="inputName">Ваше имя</label>
-                        <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+                        {{ order_form.name }}
+                        {% comment %} <input type="text" name="name" class="form-control" id="inputName" aria-describedby="nameHelp"> {% endcomment %}
                         <!-- <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                     </div>
                     <div class="form-group">
                         <label for="inputPhone">Телефон</label>
-                        <input type="tel" class="form-control" id="inputPhone">
+                        {{ order_form.phone }}
+                        {% comment %} <input type="tel" name="phone" class="form-control" id="inputPhone"> {% endcomment %}
                     </div>
                     <div class="form-group">
                         <label for="inputEmail">Email</label>
-                        <input type="email" class="form-control" id="inputEmail">
+                        {{ order_form.email }}
+                        {% comment %} <input type="email" name="email" class="form-control" id="inputEmail"> {% endcomment %}
                     </div>
                     <div class="form-group">
                         <label for="textareaQuestion">Ваш вопрос</label>
-                        <textarea class="form-control" id="textareaQuestion" rows="3"></textarea>
+                        {{ order_form.text }}
+                        {% comment %} <textarea class="form-control" name="text" id="textareaQuestion" rows="3"></textarea> {% endcomment %}
                     </div>
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="checkboxPolitika" required>
+                        {{ order_form.pdn_accept }}
+                        {% comment %} <input type="checkbox" class="form-check-input" id="checkboxPolitika" required> {% endcomment %}
                         <label class="form-check-label" for="checkboxPolitika">Я ознакомлен с <a href="{% link_holder 'POLITICS' %}" class="text-yellow" target="_blank">Политикой обработки персональных данных</a></label>
                     </div>
+                    <div id="order_captcha_check">
+                    <p>Введите символы с картинки:</p>
+                    {{ order_form.captcha }}
+                    <small><a id="change_captcha" href="#" class="d-block">заменить картинку</a></small>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <!-- Изменить на type="submit" !!! -->
-                    <button type="button" id="sendQuestion" class="btn btn-primary">Отправить</button>
+                    <button type="button" id="sendQuestion" class="btn btn-primary">
+                        Отправить <i id="spinner" class="fa fa-spinner fa-spin fa-1x fa-fw text-light" style="display: none;"></i>
+                    </button>
                     <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Закрыть</button>
                 </div>
             </form>
-            <div class="confirmation-sending" style="display: none;">
+            {% comment %} <div class="confirmation-sending" style="display: none;">
                 <div class="modal-body">
                     <p>Ваш вопрос отправлен. Наши специалисты свяжутся с Вами в ближайшее время.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-outline-warning" data-dismiss="modal">Закрыть</button>
                 </div>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </div>

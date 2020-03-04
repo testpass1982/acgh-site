@@ -121,16 +121,33 @@ class OrderForm(forms.ModelForm):
     captcha = CaptchaField()
     class Meta:
         model = OrderService
-        fields = ['name', 'phone', 'compound']
+        fields = ['name', 'phone', 'email', 'text', 'pdn_accept']
         widgets = {
                 'name': forms.TextInput({
                 'placeholder': "Ваше имя",
-                'class': 'form-control form-control-sm',
+                'class': 'form-control',
                 }),
                 'phone': forms.TextInput({
-                    'placeholder': '',
-                    'class': 'form-control form-control-sm',
+                    'placeholder': 'Ваш телефон',
+                    'class': 'form-control',
                     'type': 'text',
                 }),
-                # <input type="text" class="form-control form-control-sm" placeholder=""  type="text" id="phone2" required="">
+                'email': forms.TextInput({
+                    'placeholder': 'Ваш адрес электронной почты',
+                    'class': 'form-control',
+                    'type': 'text',
+                }),
+                'text': forms.Textarea({
+                    'placeholder': '',
+                    'class': 'form-control',
+                    'type': 'text',
+                    'rows': 4,
+                    'cols': 15
+                }),
+                'pdn_accept': forms.CheckboxInput({
+                    'checked': True,
+                    'class': 'form-check-input',
+                    'id': 'checkboxPolitika',
+                    # 'label': None
+                })
             }

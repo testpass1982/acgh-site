@@ -3,6 +3,13 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
+$('#change_captcha').click(function () {
+  $.getJSON("/captcha/refresh/", function (result) {
+      $('.captcha').attr('src', result['image_url']);
+      $('#id_captcha_0').val(result['key'])
+  });
+});
+
 window.onload = function () {
   let current = 1;
   $("#current_advert").html(`0${current}/`);
@@ -25,7 +32,38 @@ window.onload = function () {
       });
 };
 
+$("#btn-order-online").click(function(){
+  $('#exampleModalLabel').html(
+    "Необходимо получить доступ в ЭДО НАКС");
+  $(".modal-body>p.mb-2").remove();
+  $(".modal-body").prepend(
+    '<p class="mb-2">Заполните форму, чтобы получить доступ \
+    к личному кабинету ЭДО НАКС для оформления заявок на аттестацию онлайн</p>'
+    );
+  $("#id_text").closest(".form-group").remove();
+  $("#feedbackModal").modal();
+});
 
+$("#button-feedback").click(function(){
+  if ($("#exampleModalLabel").text()!="Обратная связь") {
+    $(".acgh-modal-feedback").remove();
+    $.post("/reset-modal-form/", function(response){
+      // console.log("response", response)
+      $('.header-home').after(response);
+      // $(document).on("click", function(){
+      //   $("#feedbackModal").modal();
+      // })
+    })
+    .done(
+      ()=>{
+        $("#feedbackModal").modal();
+        // console.log("form reset success")
+      })
+    .fail(
+      ()=>{console.log("errors")}
+    )
+  }
+});
 
 
 $(document).ready(function() {
@@ -212,8 +250,8 @@ $(document).ready(function() {
     var $value = $(this).parent().next();
     $value.addClass("added").text($(this).val().replace(/C:\\fakepath\\/i, ''));
   });
-  $("#phone").mask("+7 (999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
-  $("#id_phone").mask("+7 (999) 999 - 99 - 99", { completed: function () { alert("Да, этой мой номер"); } });
+  $("#phone").mask("+7 (999) 999 - 99 - 99", { completed: function () {} });
+  $("#id_phone").mask("+7 (999) 999 - 99 - 99", { completed: function () {} });
 
   // //jQuery plugin
   // (function ($) {
@@ -335,58 +373,6 @@ $(document).ready(function() {
     }
   });
 
-  // $('.button__to__send_zayavka__formmodal').click(
-  //   function(event) {
-  //     event.preventDefault();
-  //     let data = $('#ask_question_form').serializeArray();
-  //     $.post("", data)
-  //       .done(response=>{
-  //         if (response['question_id']) {
-  //           var id = response['question_id']
-  //           $('.modal-title:visible').text('Спасибо!')
-  //           $('.modal__title__small__text:visible').hide();
-  //           $('.modal-body:visible').html(`
-  //           <h3 class="text text-info">
-  //             Обращение зарегистрировано, идентификатор вопроса ${id}
-  //           </h3>
-  //           <p class="text text-primary py-3">
-  //             В ближайшее время с Вами свяжется наш специалист
-  //           </p>
-  //           `);
-  //           $('.modal-footer:visible').hide();
-  //         }
-
-  //         if (response['errors']) {
-  //             // console.log(response['errors'], typeof response['errors'])
-  //             for (let key in response['errors']) {
-  //               console.log(
-  //                 key, ":", response['errors'][key]
-  //                 );
-  //               let form = $("#ask_question_form");
-  //               let element = form.find(`input[name="${key}"]`);
-
-  //               // element.after(`<small class="text-danger">${response['errors'][key]}</small>`);
-  //               element.addClass('is-invalid border border-danger');
-  //               element.after(`<div class="invalid-feedback">${response['errors'][key]}</div>`);
-  //               if (key == 'captcha') {
-  //                 let captcha_div = $('#captcha_check');
-  //                 captcha_div.addClass('border border-danger');
-  //                 captcha_div.css("border-radius", "3px");
-  //                 $('#captcha_error_message').html(`
-  //                 <p class="text text-danger">
-  //                   ${response['errors'][key]}
-  //                 </p>
-  //                 `
-  //                 );
-  //               }
-  //             }
-  //           }
-  //       })
-  //       .fail(response=>{
-  //         console.log('FAIL', response);
-  //       });
-  //   }
-  // );
   $('#order_modal_button').click(function(event){
     var text = $("#order_modal_button").text();
     // console.log(text);
@@ -408,7 +394,6 @@ $(document).ready(function() {
           order.push({"name": $(this).data('order'), "value": "selected"});
         }
       });
-    // console.table(order);
     console.log(order)
     $.post('/accept_order/', order)
       .done(response=>{
@@ -439,7 +424,7 @@ $(document).ready(function() {
               console.log(
                 key, ":", response['errors'][key]
                 );
-              let form = $("#order_form");
+              let form = $("#acgh-order-form");
               let element = form.find(`input[name="${key}"]`);
 
               // element.after(`<small class="text-danger">${response['errors'][key]}</small>`);

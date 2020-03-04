@@ -615,6 +615,9 @@ class Partner(models.Model):
 class OrderService(models.Model):
     name = models.CharField(u'Имя контакта', max_length=50)
     phone = models.CharField(u'Телефон контакта', max_length=50)
+    email = models.EmailField(u'Email')
+    text = models.TextField(u'Вопрос из формы', max_length=500, default=None, blank=True, null=True)
+    pdn_accept = models.BooleanField(u'Согласие на обработку ПДн')
     compound = models.CharField(u'Состав заявки', max_length=300, default=None, blank=True, null=True)
     ready = models.BooleanField(u'Вопрос решен', default=False, blank=True, null=True)
 

@@ -46,6 +46,7 @@ urlpatterns = [
     path('captcha/', include('captcha.urls')),
     path('inner/', mainapp.inner, name="inner"),
     path('contacts/', mainapp.acgh_contacts, name="contacts"),
+    path("reset-modal-form/", mainapp.reset_modal_form, name="reset_form"),
 ]
 
 if settings.DEBUG:
