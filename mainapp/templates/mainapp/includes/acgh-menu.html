@@ -4,11 +4,14 @@
                             <li class="nav-item{% if request.path == '/'%} active{% endif %}">
                                 <a class="nav-link mr-lg-4 mr-xl-5" href="{% url 'index' %}">Главная<span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item{% if 'details' in request.path %} active{% endif %}">
+                            <li class="nav-item{% if 'details/2' in request.path %} active{% endif %}">
                                 <a class="nav-link mr-lg-4 mr-xl-5" href="{% link_holder 'ABOUT_US' %}">{% title_holder 'ABOUT_US' %}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link mr-lg-4 mr-xl-5" href="{% url 'index' %}#services_h1">Услуги</a>
+                            </li>
+                            <li class="nav-item{% if 'details/16' in request.path %} active{% endif %}">
+                                <a class="nav-link mr-lg-4 mr-xl-5" href="{% url 'details' 16 %}">Информация</a>
                             </li>
                             <li class="nav-item{% if request.path == '/contacts/' %} active{% endif %}">
                                 <a class="nav-link mr-lg-4 mr-xl-5" href="{% url 'contacts' %}">Контакты</a>

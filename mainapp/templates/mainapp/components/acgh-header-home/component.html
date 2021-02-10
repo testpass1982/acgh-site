@@ -23,7 +23,7 @@
                     <div class="col-sm text-center no-gutters">
                         <div class="head-contact-right">
                             <img src="{% static '/img/acgh-phone-icon.png' %}" class="mr-1" alt="icon">
-                            <a href="tel:+79256011400" class="text-yellow">{{ profile.org_main_phone }}</a>
+                            <a href="tel:{{ profile.org_main_phone }}" class="text-yellow">{{ profile.org_main_phone }}</a>
                             <span class="d-inline-block d-md-none d-xl-inline-block text-white ml-2">г.&nbsp;Москва <i class="fa fa-info-circle" data-toggle="tooltip" data-placement="bottom" title="{{ profile.org_address }}"></i></span>
                         </div>
                     </div>
