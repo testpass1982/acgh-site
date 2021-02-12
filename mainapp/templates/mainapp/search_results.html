@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+            <div class="acgh-contacts py-5">
+                <div class="actyvity p-3 p-sm-4 p-xl-5 mb-5">
+                    {% if search_results %}
+                        <h1 class="my-5">Результаты поиска</h1>
+                        {% for result in search_results %}
+                            <p>
+                                <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
+                            </p>
+                        {% empty %}
+                            <p>Ничего не найдено...</p>
+                        {% endfor %}
+                    {% else %}
+                    <h1 class="my-5">Ничего не найдено...</h1> 
+                    {% endif %}
+                </div>
+            </div>
+
+{% endblock %}

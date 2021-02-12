@@ -1,7 +1,8 @@
+import os
 from django import forms
 from django.core.validators import FileExtensionValidator, validate_email
 from captcha.fields import CaptchaField
-import os
+from haystack.forms import SearchForm
 
 from .models import Post, Article, Document, Menu, Profile, OrderService
 
@@ -151,3 +152,29 @@ class OrderForm(forms.ModelForm):
                     # 'label': None
                 })
             }
+
+
+class PostSearchForm(SearchForm):
+    text = forms.CharField(max_length=50, required=False, widget=forms.TextInput(
+        attrs={'class': 'form-control border-0',
+               'type': 'text',
+               'placeholder': 'Введите фразу для поиска',
+               'aria-describedby': 'button-search',
+               }
+    ))
+
+    def search(self):
+        sqs = super(PostSearchForm, self).search()
+
+        # import pdb; pdb.set_trace()
+
+        if not self.is_valid():
+            return self.no_query_found()
+
+        if self.cleaned_data['text']:
+            sqs = sqs.filter(text=self.cleaned_data['text'])
+
+        return sqs
+
+    def no_query_found(self):
+        return self.searchqueryset.all()

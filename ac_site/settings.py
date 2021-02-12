@@ -88,6 +88,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'captcha',
     'stdimage',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +121,7 @@ TEMPLATES = [
                 'mainapp.context_processors.site_configuration',
                 'mainapp.context_processors.partners',
                 'mainapp.context_processors.order_form',
+                'mainapp.context_processors.post_search_form',
                 'mainapp.context_processors.org_staff',
                 'mainapp.context_processors.attestats',
             ],
@@ -300,3 +302,21 @@ with open(os.path.join(home, 'send_mail_secret.json'), 'r') as f:
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_SSL = True
+
+
+####################################
+####### search engine config #######
+####################################
+
+
+with open(os.path.join(home, 'search_secret.json'), 'r') as f:
+    search_settings = f.read()
+    search_db_settings = json.loads(search_settings)
+    SEARCH_DB_FILE_PATH = search_db_settings['whoosh_index_db']
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(SEARCH_DB_FILE_PATH), 'whoosh_index'),
+    },
+}

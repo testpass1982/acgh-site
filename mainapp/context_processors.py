@@ -1,6 +1,6 @@
 from .models import Document
 from .models import Profile, Service, Post, SiteConfiguration, Component, Partner, Attestat
-from .forms import ProfileImportForm, OrderForm
+from .forms import ProfileImportForm, OrderForm, PostSearchForm
 import random
 from django.template import Context, Template
 from django.shortcuts import render, get_object_or_404
@@ -91,6 +91,11 @@ def partners(request):
 def order_form(request):
     order_form = OrderForm()
     return {'order_form': order_form}
+
+
+def post_search_form(request):
+    post_search_form = PostSearchForm()
+    return {'post_search_form': post_search_form}
 
 
 def org_staff(request):

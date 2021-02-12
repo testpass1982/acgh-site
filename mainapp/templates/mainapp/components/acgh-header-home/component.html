@@ -5,11 +5,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-4 d-none d-md-block">
-                        <form>
+                        <form action="{% url 'search_post' %}" method="post">
                             <div class="input-group">
-                                <input type="text" class="form-control border-0" aria-describedby="button-search">
+                                {% csrf_token %}
+                                {% comment %} <input type="text" class="form-control border-0" aria-describedby="button-search"> {% endcomment %}
+                                {{ post_search_form.text }}
                                 <div class="input-group-append">
-                                    <button class="btn border-0 btn-head-search" type="submit" id="button-search"><img src="{% static '/img/acgh-search-icon.png' %}" alt=""></button>
+                                    <button class="btn border-0 btn-head-search" type="submit" id="button-search" value="search"><img src="{% static '/img/acgh-search-icon.png' %}" alt=""></button>
                                 </div>
                             </div>
                         </form>

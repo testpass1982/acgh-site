@@ -109,7 +109,7 @@ def doc(request):
 def partners(request):
     return render(request, 'mainapp/partners.html')
 
-def page_details(request, pk=None):
+def page_details(request, pk=None, content=None):
 
     post = get_object_or_404(Post, pk=pk)
     parameters = PostParameter.objects.filter(post=post).order_by('number')
@@ -205,7 +205,7 @@ def political(request):
     }
     return render(request, 'mainapp/political.html', content)
 
-def details_news(request, pk=None):
+def details_news(request, pk=None, content=None):
 
     return_link = HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
@@ -275,3 +275,12 @@ def acgh_contacts(request):
 
 def reset_modal_form(request):
     return render(request, 'mainapp/components/acgh-modal-feedback/component.html')
+
+from .forms import PostSearchForm
+def search_post(request):
+    form = PostSearchForm(request.POST)
+    results = form.search()
+    context = {
+        'search_results': results,
+    }
+    return render(request, 'mainapp/search_results.html', context)

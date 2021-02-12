@@ -47,6 +47,7 @@ urlpatterns = [
     path('inner/', mainapp.inner, name="inner"),
     path('contacts/', mainapp.acgh_contacts, name="contacts"),
     path("reset-modal-form/", mainapp.reset_modal_form, name="reset_form"),
+    path("search/", mainapp.search_post, name="search_post"),
 ]
 
 if settings.DEBUG:
