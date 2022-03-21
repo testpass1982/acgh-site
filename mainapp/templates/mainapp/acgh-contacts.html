@@ -9,8 +9,10 @@
             <hr>
             <h3 class="mb-3">Адрес:</h3>
             <ul class="pl-3 mb-0">
-                <li class="text-yellow"><span class="text-secondary mr-2">Фактический адрес:</span><span class="activity-text-bold">г. Москва, Переведеновский переулок, д. 13, стр. 15</span></li>
-                <li class="text-yellow"><span class="text-secondary mr-2">Юридический адрес:</span><span class="activity-text-bold">105187, г. Москва, ул. Ткацкая, д. 46, пом. 36</span></li>
+                <li class="text-yellow"><span class="text-secondary mr-2">Фактический адрес:</span>
+                    <span class="activity-text-bold">{{ profile.org_address }}</span></li>
+                <li class="text-yellow"><span class="text-secondary mr-2">Юридический адрес:</span>
+                    <span class="activity-text-bold">{{ profile.org_ur_address }}</span></li>
             </ul>
             <hr>
             <h3 class="mb-3">Телефон:</h3>
@@ -21,8 +23,23 @@
             <hr>
             <h3 class="mb-3">E-mail:</h3>
             <ul class="pl-3 mb-0">
-                <li class="text-yellow"><a href="mailto:{{ profile.org_email }}" class="activity-text-bold">{{ profile.org_email }}</a></li>
+                <li class="text-yellow"><a href="mailto:{{ profile.org_email }}" class="activity-text-bold">
+                {{ profile.org_email }}</a></li>
             </ul>
+            {% if profile.org_email_secondary %}
+                <ul class="pl-3 mb-0">
+                    <li class="text-yellow"><a href="mailto:{{ profile.org_email_secondary }}" class="activity-text-bold">
+                    {{ profile.org_email_secondary }}</a></li>
+                </ul>
+            {% endif %}
+            {% if profile.org_contacts_file %}
+                <hr>
+                <h3 class="mb-3">Все контакты сотрудников центра:</h3>
+                <ul class="pl-3 mb-0">
+                    <li class="text-yellow"><a href="{{ profile.org_contacts_file.url }}" class="activity-text-bold">Скачать</a></li>
+                </ul>
+                
+            {% endif %}
         </div>
         <div class="row">
             <div class="col-md-6">
