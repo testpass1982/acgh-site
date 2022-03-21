@@ -19,7 +19,12 @@
                     <div class="col-sm text-center no-gutters">
                         <div class="head-contact-left">
                             <img src="{% static '/img/acgh-mail-icon.png' %}" class="mr-1" alt="icon">
-                            <a href="mailto:{{ profile.org_email }}" class="text-white">{{ profile.org_email }}</a>
+                                <a href="mailto:{{ profile.org_email }}" class="text-white">{{ profile.org_email }}</a>
+                            {% if profile.org_email_secondary %}
+                                <br>
+                                <img src="{% static '/img/acgh-mail-icon.png' %}" class="mr-1" alt="icon">
+                                <a href="mailto:{{ profile.org_email_secondary }}" class="text-white">{{ profile.org_email_secondary }}</a>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-sm text-center no-gutters">
